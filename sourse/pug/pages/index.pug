@@ -10,7 +10,7 @@ include ../blocks/s-news/_s-news.pug
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'title'
+	- let  title= 'Главная'
 	title= title
 block pagecontent 
 	//- +mob-mnu()
@@ -18,7 +18,7 @@ block pagecontent
 		+top-line()
 		+top-nav()
 	+header-block()
-	+s-main-filter()
+	//- +s-main-filter()
 	+s-catalog()
 		+title('Новинки')
 	+s-news()

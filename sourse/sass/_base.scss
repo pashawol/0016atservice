@@ -40,6 +40,12 @@ html {
 	margin-bottom: rem(40px);
 	background-color: #E9E8E8;
 
+	@include media-breakpoint-down(lg) {
+
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
 	h1,
 	h2 {
 		display: inline-block;
