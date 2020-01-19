@@ -221,113 +221,27 @@ function eventHandler() {
 		$('.ddn_menu').toggle();
 		return false;
 	});
-
-	var impressions = [];
-	$('.ga_item').each(function () {
-		//var imp=[];
-		//impa.name='name';
-		imp = {
-			'name': $(this).find('.ga_name').val(),
-			'id': $(this).find('.ga_id').val(),
-			'price': $(this).find('.ga_price').val(),
-			'brand': $(this).find('.ga_brand').val(),
-			'category': $(this).find('.ga_category').val(),
-			'position': $(this).find('.ga_position').val()
-		};
-
-    /*imp['name']=$(this).find('.ga_name').val()+'NNN';
-    imp['id']=$(this).find('.ga_id').val();
-    imp['price']=$(this).find('.ga_price').val();
-    imp['brand']=$(this).find('.ga_brand').val();
-    imp['category']=$(this).find('.ga_category').val();
-    imp['position']=$(this).find('.ga_position').val();*/
-
-		impressions.push(imp);
+	$("#price-range").slider({
+		stop: function (event, ui) { UpdateFilter(); },
+		range: true,
+		min: 0,
+		max: 1423540,
+		values: [0, 1423540],
+		slide: function (event, ui) {
+			$("._r_from").html(ui.values[0] + " <small>грн</small>");
+			$("#flt_price_min").val(ui.values[0]);
+			$("._r_to").html(ui.values[1] + " <small>грн</small>");
+			$("#flt_price_max").val(ui.values[1]);
+		}
+	});
+	$(".filter_block select").selectmenu({
+		change: function (event, ui) { UpdateFilter(); }
 	});
 
-	if ($('.ga_item').length) {
-
-		window.dataLayer = window.dataLayer || [];
-		dataLayer.push({
-			'ecommerce': {
-				'currencyCode': 'UAH',
-				'impressions': impressions
-			},
-			'event': 'gtm-ee-event',
-			'gtm-ee-event-category': 'Enhanced Ecommerce',
-			'gtm-ee-event-action': 'Product Impressions',
-			'gtm-ee-event-non-interaction': 'True',
-		});
-	}
-
-
-	$('.ga_st2').click(function () {
-
-		window.dataLayer = window.dataLayer || [];
-		dataLayer.push({
-			'ecommerce': {
-				'currencyCode': 'UAH',
-				'click': {
-					'products': [{
-						'name': $(this).parent().find('.ga_name').val(),
-						'id': $(this).parent().find('.ga_id').val(),
-						'price': $(this).parent().find('.ga_price').val(),
-						'brand': $(this).parent().find('.ga_brand').val(),
-						'category': $(this).parent().find('.ga_category').val(),
-						'position': $(this).parent().find('.ga_position').val()
-					}]
-				}
-			},
-			'event': 'gtm-ee-event',
-			'gtm-ee-event-category': 'Enhanced Ecommerce',
-			'gtm-ee-event-action': 'Product Clicks',
-			'gtm-ee-event-non-interaction': 'False',
-		});
-		//return false;    
-	});
-
-
-	if ($('.ga_item').length) {
-
-		window.dataLayer = window.dataLayer || [];
-		dataLayer.push({
-			'ecommerce': {
-				'currencyCode': 'UAH',
-				'impressions': impressions
-			},
-			'event': 'gtm-ee-event',
-			'gtm-ee-event-category': 'Enhanced Ecommerce',
-			'gtm-ee-event-action': 'Product Impressions',
-			'gtm-ee-event-non-interaction': 'True',
-		});
-	}
-
-
-	$('.ga_st2').click(function () {
-
-		window.dataLayer = window.dataLayer || [];
-		dataLayer.push({
-			'ecommerce': {
-				'currencyCode': 'UAH',
-				'click': {
-					'products': [{
-						'name': $(this).parent().find('.ga_name').val(),
-						'id': $(this).parent().find('.ga_id').val(),
-						'price': $(this).parent().find('.ga_price').val(),
-						'brand': $(this).parent().find('.ga_brand').val(),
-						'category': $(this).parent().find('.ga_category').val(),
-						'position': $(this).parent().find('.ga_position').val()
-					}]
-				}
-			},
-			'event': 'gtm-ee-event',
-			'gtm-ee-event-category': 'Enhanced Ecommerce',
-			'gtm-ee-event-action': 'Product Clicks',
-			'gtm-ee-event-non-interaction': 'False',
-		});
-		//return false;    
-	});
-
+	$(".flt_switch").click(function (e) {
+		e.preventDefault();
+		$(".leftside.grpls").slideToggle();
+	})
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

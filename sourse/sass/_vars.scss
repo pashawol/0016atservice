@@ -110,7 +110,7 @@ $container-max-widths: ( // xs: 480px,
   // sm: 540px,
   // md: 720px,
   // lg: 960px,
-  xl: 1140px,
+  xl: 1130px,
   // xxl: 1340px
 ) !default;
 // Grid columns
@@ -880,13 +880,13 @@ $custom-file-text: (en: "Browse"
 
 // // Breadcrumbs
 
-// $breadcrumb-padding-y:              .75rem !default;
-// $breadcrumb-padding-x:              1rem !default;
+$breadcrumb-padding-y: 1.5rem !default;
+$breadcrumb-padding-x: 1.5rem !default;
 // $breadcrumb-item-padding-x:         .5rem !default;
 
-// $breadcrumb-margin-bottom:          1rem !default;
+$breadcrumb-margin-bottom: rem(40) !default;
 
-// $breadcrumb-bg:                     $gray-200 !default;
+$breadcrumb-bg: transporent !default;
 // $breadcrumb-divider-color:          $gray-600 !default;
 // $breadcrumb-active-color:           $gray-600 !default;
 // $breadcrumb-divider:                quote("/") !default;

@@ -1,0 +1,959 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-main-filter/_s-main-filter.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-news/_s-news.pug
+
+block variables
+	- let  mainPage= 'inner-page'
+block title
+	- let  title= 'Грузовые шины'
+	title= title
+block pagecontent 
+	//- +mob-mnu()
+	+header()
+		+top-line()
+		+top-nav()
+	//- +header-block()
+
+	.container
+		+breadcrumb("Главная", title)
+
+	//- +s-news()
+	.container
+		+title(title)
+	.container.clearfix
+		.flt_switch
+			a(href='#') Фильтр
+		.leftside.grpls
+			.filters_blkk
+				input#grid(type='hidden', value='2')
+				input#cname(type='hidden', value='gruzovie_shini')
+				.f_cpt Цена
+				div
+					#price-range
+				._r_prices
+					._r_from
+						| 0 
+						small грн
+					._r_to
+						| 1423540 
+						small грн
+				input#flt_price_min(type='hidden', value='0')
+				input#flt_price_max(type='hidden', value='1423540')
+			 
+				br
+				br
+				.flt_cpt Ширина
+				.filter_block
+					select#country(name='country', style='width: 100%;')
+						option(value='') ---
+						option(value='6.5') 6.5
+						option(value='7') 7
+						option(value='7%2C50') 7,50
+						option(value='7.5') 7.5
+						option(value='8.25') 8.25
+						option(value='8.5') 8.5
+						option(value='9') 9
+						option(value='9.5') 9.5
+						option(value='10') 10
+						option(value='11') 11
+						option(value='12') 12
+						option(value='13') 13
+						option(value='14') 14
+						option(value='205') 205
+						option(value='215') 215
+						option(value='225') 225
+						option(value='235') 235
+						option(value='245') 245
+						option(value='255') 255
+						option(value='265') 265
+						option(value='275') 275
+						option(value='285') 285
+						option(value='295') 295
+						option(value='305') 305
+						option(value='315') 315
+						option(value='355') 355
+						option(value='385') 385
+						option(value='425') 425
+						option(value='435') 435
+						option(value='445') 445
+				.flt_cpt Профиль
+				.filter_block
+					select#ltp(name='ltp', style='width: 100%;')
+						option(value='') ---
+						option(value='45') 45
+						option(value='50') 50
+						option(value='55') 55
+						option(value='60') 60
+						option(value='65') 65
+						option(value='70') 70
+						option(value='75') 75
+						option(value='80') 80
+				.flt_cpt Диаметр
+				.filter_block
+					select#class(name='class', style='width: 100%;')
+						option(value='') ---
+						option(value='R15') R15
+						option(value='R16') R16
+						option(value='R17%2C5') R17,5
+						option(value='R17.5') R17.5
+						option(value='R19%2C5') R19,5
+						option(value='R20') R20
+						option(value='R22%2C5') R22,5
+						option(value='R24') R24
+						option(value='24%2C5') 24,5
+				.flt_cpt Тип оси
+				.filter_block
+					select#ost(name='ost', style='width: 100%;')
+						option(value='') ---
+						option(value='%E2%E5%E4%F3%F9%E0%FF') ведущая
+						option(value='%CF%F0%E8%E2%EE%E4%ED%E0%FF') Приводная
+						option(value='%CF%F0%E8%F6%E5%EF%ED%E0%FF') Прицепная
+						option(value='%D0%F3%EB%E5%E2%E0%FF') Рулевая
+						option(value='%D3%ED%E8%E2%E5%F0%F1%E0%EB%FC%ED%E0%FF') Универсальная
+				.flt_cpt Назначение
+				.filter_block
+					select#dst(name='dst', style='width: 100%;')
+						option(value='') ---
+						option(value='%C0%E2%F2%EE%E1%F3%F1%ED%EE%E5') Автобусное
+						option(value='%E2%ED%E5%E4%EE%F0%EE%E6%ED%EE%E5') внедорожное
+						option(value='%C4%E0%EB%FC%ED%E5%F0%E5%E9%F1%EE%E2%FB%E5+%EF%E5%F0%E5%E2%EE%E7%EA%E8+') Дальнерейсовые перевозки 
+						option(value='%CC%E0%E3%E8%F1%F2%F0%E0%EB%FC%ED%FB%E5+%EF%E5%F0%E5%E2%EE%E7%EA%E8') Магистральные перевозки
+						option(value='%D0%E5%E3%E8%EE%ED%E0%EB%FC%ED%E0%FF') Региональная
+						option(value='%F0%E5%E3%E8%EE%ED%E0%EB%FC%ED%EE%E5') региональное
+						option(value='%D1%EC%E5%F8%E0%ED%ED%EE%E5') Смешанное
+						option(value='%D3%ED%E8%E2%E5%F0%F1%E0%EB%FC%ED%E0%FF') Универсальная
+						option(value='%D3%ED%E8%E2%E5%F0%F1%E0%EB%FC%ED%E0%FF%2C+%E0%E2%F2%EE%E1%F3%F1%ED%E0%FF') Универсальная, автобусная
+				.flt_cpt Бренд
+				.filter_block
+					select#vendor(name='vendor', style='width: 100%;')
+						option(value='') ---
+						option(value='%28Hankook') (Hankook
+						option(value='APLUS') APLUS
+						option(value='Aufine') Aufine
+						option(value='Changfeng') Changfeng
+						option(value='Compasal') Compasal
+						option(value='Debi%F1a') Debiсa
+						option(value='Dunlop') Dunlop
+						option(value='Firemax') Firemax
+						option(value='Fulda') Fulda
+						option(value='Goodyear') Goodyear
+						option(value='Hankook') Hankook
+						option(value='Hifly') Hifly
+						option(value='Jinyu') Jinyu
+						option(value='Kelly') Kelly
+						option(value='Kpatos') Kpatos
+						option(value='LingLong') LingLong
+						option(value='Ovation') Ovation
+						option(value='Roadshine') Roadshine
+						option(value='Safecess') Safecess
+						option(value='Sava') Sava
+						option(value='SYRON') SYRON
+						option(value='TRANSKING') TRANSKING
+						option(value='YellowSea') YellowSea
+						option(value='%CD%EA%D8%C7') НкШЗ
+ 
+			.filters_btn
+				.fl_apply
+					a#filter_apply(href='#') Применить
+				a#filter_reset(href='#') Сбросить
+		.rightside
+			div(style='display:inline-block;')
+				#ida6944.item.ga_item
+					a.ga_st2(href='/hankook_ah35__21575r175')
+						.avx_block
+							img(src='/content/proc/sml_img97590123503.jpg')
+					a.ga_st2(href='/hankook_ah35__21575r175')
+						.name_block Hankook AH35  215/75R17,5
+					.price_block
+						.price 5177 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6944,'#ida6944')") Купить
+					input.ga_name(type='hidden', value='Hankook AH35  215/75R17,5')
+					input.ga_id(type='hidden', value='6944')
+					input.ga_price(type='hidden', value='5177')
+					input.ga_brand(type='hidden', value='Hankook')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='1')
+				#ida6945.item.ga_item
+					a.ga_st2(href='/hankook_dh35_21575r175')
+						.avx_block
+							img(src='/content/proc/sml_img35420422996.jpg')
+					a.ga_st2(href='/hankook_dh35_21575r175')
+						.name_block Hankook DH35 215/75R17,5
+					.price_block
+						.price 5118 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6945,'#ida6945')") Купить
+					input.ga_name(type='hidden', value='Hankook DH35 215/75R17,5')
+					input.ga_id(type='hidden', value='6945')
+					input.ga_price(type='hidden', value='5118')
+					input.ga_brand(type='hidden', value='Hankook')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='2')
+				#ida6955.item.ga_item
+					a.ga_st2(href='/24570r175_143j146f_kmax_t_3psf_goodyear___')
+						.avx_block
+							img(src='/content/proc/sml_img41287168189.jpg')
+					a.ga_st2(href='/24570r175_143j146f_kmax_t_3psf_goodyear___')
+						.name_block 245/70R17,5 143J146F KMAX T 3PSF (Goodyear)   
+					.price_block
+						.price 9950 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6955,'#ida6955')") Купить
+					input.ga_name(type='hidden', value='245/70R17,5 143J146F KMAX T 3PSF (Goodyear)   ')
+					input.ga_id(type='hidden', value='6955')
+					input.ga_price(type='hidden', value='9950')
+					input.ga_brand(type='hidden', value='Goodyear')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='3')
+				#ida6958.item.ga_item
+					a.ga_st2(href='/29560r225_150k149l_fuelmax_d_3psf_goodyear')
+						.avx_block
+							img(src='/content/proc/sml_img37004322907.jpg')
+					a.ga_st2(href='/29560r225_150k149l_fuelmax_d_3psf_goodyear')
+						.name_block 295/60R22,5 150K149L FUELMAX D 3PSF (Goodyear)
+					.price_block
+						.price 15177 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6958,'#ida6958')") Купить
+					input.ga_name(type='hidden', value='295/60R22,5 150K149L FUELMAX D 3PSF (Goodyear)')
+					input.ga_id(type='hidden', value='6958')
+					input.ga_price(type='hidden', value='15177')
+					input.ga_brand(type='hidden', value='Goodyear')
+					input.ga_category(type='hidden', value='861')
+					input.ga_position(type='hidden', value='4')
+				#ida6959.item.ga_item
+					a.ga_st2(href='/29560r225_150k149l_fuelmax_s_ms_goodyear_')
+						.avx_block
+							img(src='/content/proc/sml_img71500617936.jpg')
+					a.ga_st2(href='/29560r225_150k149l_fuelmax_s_ms_goodyear_')
+						.name_block 295/60R22,5 150K149L FUELMAX S M+S (Goodyear) 
+					.price_block
+						.price 14353 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6959,'#ida6959')") Купить
+					input.ga_name(type='hidden', value='295/60R22,5 150K149L FUELMAX S M+S (Goodyear) ')
+					input.ga_id(type='hidden', value='6959')
+					input.ga_price(type='hidden', value='14353')
+					input.ga_brand(type='hidden', value='Goodyear')
+					input.ga_category(type='hidden', value='861')
+					input.ga_position(type='hidden', value='5')
+				#ida6960.item.ga_item
+					a.ga_st2(href='/29560r225_150k149l_kmax_d_3psf_goodyear___')
+						.avx_block
+							img(src='/content/proc/sml_img76707856254.jpg')
+					a.ga_st2(href='/29560r225_150k149l_kmax_d_3psf_goodyear___')
+						.name_block 295/60R22,5 150K149L KMAX D 3PSF (Goodyear)   
+					.price_block
+						.price 14942 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6960,'#ida6960')") Купить
+					input.ga_name(type='hidden', value='295/60R22,5 150K149L KMAX D 3PSF (Goodyear)   ')
+					input.ga_id(type='hidden', value='6960')
+					input.ga_price(type='hidden', value='14942')
+					input.ga_brand(type='hidden', value='Goodyear')
+					input.ga_category(type='hidden', value='861')
+					input.ga_position(type='hidden', value='6')
+				#ida6961.item.ga_item
+					a.ga_st2(href='/29580r225_dl10_152148m_hankook')
+						.avx_block
+							img(src='/content/proc/sml_img34217656226.jpg')
+					a.ga_st2(href='/29580r225_dl10_152148m_hankook')
+						.name_block 295/80R22,5 DL10 152/148M (Hankook)
+					.price_block
+						.price 11059 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6961,'#ida6961')") Купить
+					input.ga_name(type='hidden', value='295/80R22,5 DL10 152/148M (Hankook)')
+					input.ga_id(type='hidden', value='6961')
+					input.ga_price(type='hidden', value='11059')
+					input.ga_brand(type='hidden', value='(Hankook')
+					input.ga_category(type='hidden', value='861')
+					input.ga_position(type='hidden', value='7')
+				#ida6962.item.ga_item
+					a.ga_st2(href='/31560r225_ah31_154148l_hankook')
+						.avx_block
+							img(src='/content/proc/sml_img95799985439.jpg')
+					a.ga_st2(href='/31560r225_ah31_154148l_hankook')
+						.name_block 315/60R22,5 AH31 154/148L (Hankook)
+					.price_block
+						.price 11648 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6962,'#ida6962')") Купить
+					input.ga_name(type='hidden', value='315/60R22,5 AH31 154/148L (Hankook)')
+					input.ga_id(type='hidden', value='6962')
+					input.ga_price(type='hidden', value='11648')
+					input.ga_brand(type='hidden', value='Hankook')
+					input.ga_category(type='hidden', value='861')
+					input.ga_position(type='hidden', value='8')
+				#ida6963.item.ga_item
+					a.ga_st2(href='/31560r225_dh31_152148l_hankook')
+						.avx_block
+							img(src='/content/proc/sml_img72280275705.jpg')
+					a.ga_st2(href='/31560r225_dh31_152148l_hankook')
+						.name_block 315/60R22,5 DH31 152/148L (Hankook)
+					.price_block
+						.price 11648 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6963,'#ida6963')") Купить
+					input.ga_name(type='hidden', value='315/60R22,5 DH31 152/148L (Hankook)')
+					input.ga_id(type='hidden', value='6963')
+					input.ga_price(type='hidden', value='11648')
+					input.ga_brand(type='hidden', value='Hankook')
+					input.ga_category(type='hidden', value='861')
+					input.ga_position(type='hidden', value='9')
+				#ida6964.item.ga_item
+					a.ga_st2(href='/31580r225_dl10_156150l_hankook')
+						.avx_block
+							img(src='/content/proc/sml_img71164613044.jpg')
+					a.ga_st2(href='/31580r225_dl10_156150l_hankook')
+						.name_block 315/80R22,5 DL10+ 156/150L (Hankook)
+					.price_block
+						.price 11883 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6964,'#ida6964')") Купить
+					input.ga_name(type='hidden', value='315/80R22,5 DL10+ 156/150L (Hankook)')
+					input.ga_id(type='hidden', value='6964')
+					input.ga_price(type='hidden', value='11883')
+					input.ga_brand(type='hidden', value='Hankook')
+					input.ga_category(type='hidden', value='861')
+					input.ga_position(type='hidden', value='10')
+				#ida6965.item.ga_item
+					a.ga_st2(href='/38555r225_ah31_160k_hankook')
+						.avx_block
+							img(src='/content/proc/sml_img28882824974.jpg')
+					a.ga_st2(href='/38555r225_ah31_160k_hankook')
+						.name_block 385/55R22,5 AH31 160K (Hankook)
+					.price_block
+						.price 12706 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6965,'#ida6965')") Купить
+					input.ga_name(type='hidden', value='385/55R22,5 AH31 160K (Hankook)')
+					input.ga_id(type='hidden', value='6965')
+					input.ga_price(type='hidden', value='12706')
+					input.ga_brand(type='hidden', value='Hankook')
+					input.ga_category(type='hidden', value='861')
+					input.ga_position(type='hidden', value='11')
+				#ida6966.item.ga_item
+					a.ga_st2(href='/38565r225_164k158l_fuelmax_t_hl_ms_tl_goodyear')
+						.avx_block
+							img(src='/content/proc/sml_img63279859158.jpg')
+					a.ga_st2(href='/38565r225_164k158l_fuelmax_t_hl_ms_tl_goodyear')
+						.name_block 385/65R22,5 164K158L FUELMAX T HL M+S TL (Goodyear)
+					.price_block
+						.price 13530 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6966,'#ida6966')") Купить
+					input.ga_name(type='hidden', value='385/65R22,5 164K158L FUELMAX T HL M+S TL (Goodyear)')
+					input.ga_id(type='hidden', value='6966')
+					input.ga_price(type='hidden', value='13530')
+					input.ga_brand(type='hidden', value='Goodyear')
+					input.ga_category(type='hidden', value='861')
+					input.ga_position(type='hidden', value='12')
+				#ida6967.item.ga_item
+					a.ga_st2(href='/11r225_148145k_nf_701_nkshz')
+						.avx_block
+							img(src='/content/proc/sml_img59758714507.jpg')
+					a.ga_st2(href='/11r225_148145k_nf_701_nkshz')
+						.name_block 11R22,5 148/145K NF 701 (НкШЗ)
+					.price_block
+						.price 7942 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6967,'#ida6967')") Купить
+					input.ga_name(type='hidden', value='11R22,5 148/145K NF 701 (НкШЗ)')
+					input.ga_id(type='hidden', value='6967')
+					input.ga_price(type='hidden', value='7942')
+					input.ga_brand(type='hidden', value='НкШЗ')
+					input.ga_category(type='hidden', value='861')
+					input.ga_position(type='hidden', value='13')
+				#ida6968.item.ga_item
+					a.ga_st2(href='/20565r175_129k132f_kmax_t_3psf_goodyear')
+						.avx_block
+							img(src='/content/proc/sml_img85302525153.jpg')
+					a.ga_st2(href='/20565r175_129k132f_kmax_t_3psf_goodyear')
+						.name_block 205/65R17,5 129K132F KMAX T 3PSF (Goodyear)
+					.price_block
+						.price 6683 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6968,'#ida6968')") Купить
+					input.ga_name(type='hidden', value='205/65R17,5 129K132F KMAX T 3PSF (Goodyear)')
+					input.ga_id(type='hidden', value='6968')
+					input.ga_price(type='hidden', value='6683')
+					input.ga_brand(type='hidden', value='Goodyear')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='14')
+				#ida6969.item.ga_item
+					a.ga_st2(href='/20575r175_124122m_avant_4_sava_')
+						.avx_block
+							img(src='/content/proc/sml_img76594617413.jpg')
+					a.ga_st2(href='/20575r175_124122m_avant_4_sava_')
+						.name_block 205/75R17,5 124/122M AVANT 4 (Sava) 
+					.price_block
+						.price 5153 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6969,'#ida6969')") Купить
+					input.ga_name(type='hidden', value='205/75R17,5 124/122M AVANT 4 (Sava) ')
+					input.ga_id(type='hidden', value='6969')
+					input.ga_price(type='hidden', value='5153')
+					input.ga_brand(type='hidden', value='Sava')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='15')
+				#ida6970.item.ga_item
+					a.ga_st2(href='/20575r175_124122m_dh05_hankook')
+						.avx_block
+							img(src='/content/proc/sml_img76765698972.jpg')
+					a.ga_st2(href='/20575r175_124122m_dh05_hankook')
+						.name_block 205/75R17,5 124/122M DH05 (Hankook)
+					.price_block
+						.price 4824 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6970,'#ida6970')") Купить
+					input.ga_name(type='hidden', value='205/75R17,5 124/122M DH05 (Hankook)')
+					input.ga_id(type='hidden', value='6970')
+					input.ga_price(type='hidden', value='4824')
+					input.ga_brand(type='hidden', value='Hankook')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='16')
+				#ida6971.item.ga_item
+					a.ga_st2(href='/20575r175_124122m_regiocontrol_fulda')
+						.avx_block
+							img(src='/content/proc/sml_img71688341177.jpg')
+					a.ga_st2(href='/20575r175_124122m_regiocontrol_fulda')
+						.name_block 205/75R17,5 124/122M REGIOCONTROL (Fulda)
+					.price_block
+						.price 5353 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6971,'#ida6971')") Купить
+					input.ga_name(type='hidden', value='205/75R17,5 124/122M REGIOCONTROL (Fulda)')
+					input.ga_id(type='hidden', value='6971')
+					input.ga_price(type='hidden', value='5353')
+					input.ga_brand(type='hidden', value='Fulda')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='17')
+				#ida6973.item.ga_item
+					a.ga_st2(href='/20575r175_124122m_sp344_dunlop')
+						.avx_block
+							img(src='/content/proc/sml_img47370927184.jpg')
+					a.ga_st2(href='/20575r175_124122m_sp344_dunlop')
+						.name_block 205/75R17,5 124/122M SP344 (Dunlop)
+					.price_block
+						.price 5942 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6973,'#ida6973')") Купить
+					input.ga_name(type='hidden', value='205/75R17,5 124/122M SP344 (Dunlop)')
+					input.ga_id(type='hidden', value='6973')
+					input.ga_price(type='hidden', value='5942')
+					input.ga_brand(type='hidden', value='Dunlop')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='18')
+				#ida6974.item.ga_item
+					a.ga_st2(href='/20575r175_124122m_sp444_dunlop________')
+						.avx_block
+							img(src='/content/proc/sml_img73019902133.jpg')
+					a.ga_st2(href='/20575r175_124122m_sp444_dunlop________')
+						.name_block 205/75R17,5 124/122M SP444 (Dunlop)        
+					.price_block
+						.price 6118 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6974,'#ida6974')") Купить
+					input.ga_name(type='hidden', value='205/75R17,5 124/122M SP444 (Dunlop)        ')
+					input.ga_id(type='hidden', value='6974')
+					input.ga_price(type='hidden', value='6118')
+					input.ga_brand(type='hidden', value='Dunlop       ')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='19')
+				#ida6975.item.ga_item
+					a.ga_st2(href='/20575r175_124122m_smart_flex_ah35_hankook')
+						.avx_block
+							img(src='/content/proc/sml_img32688839584.jpg')
+					a.ga_st2(href='/20575r175_124122m_smart_flex_ah35_hankook')
+						.name_block 205/75R17,5 124/122М Smart Flex AH35 (Hankook)
+					.price_block
+						.price 5130 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6975,'#ida6975')") Купить
+					input.ga_name(type='hidden', value='205/75R17,5 124/122М Smart Flex AH35 (Hankook)')
+					input.ga_id(type='hidden', value='6975')
+					input.ga_price(type='hidden', value='5130')
+					input.ga_brand(type='hidden', value='Hankook')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='20')
+				#ida6976.item.ga_item
+					a.ga_st2(href='/21575r175_126124m_avant_4_sava')
+						.avx_block
+							img(src='/content/proc/sml_img32110897093.jpg')
+					a.ga_st2(href='/21575r175_126124m_avant_4_sava')
+						.name_block 215/75R17,5 126/124M AVANT 4 (Sava)
+					.price_block
+						.price 4659 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6976,'#ida6976')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 126/124M AVANT 4 (Sava)')
+					input.ga_id(type='hidden', value='6976')
+					input.ga_price(type='hidden', value='4659')
+					input.ga_brand(type='hidden', value='Sava')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='21')
+				#ida6977.item.ga_item
+					a.ga_st2(href='/21575r175_126124m_nr201_nkshz')
+						.avx_block
+							img(src='/content/proc/sml_img16264102556.jpg')
+					a.ga_st2(href='/21575r175_126124m_nr201_nkshz')
+						.name_block 215/75R17,5 126/124M NR201 (НкШЗ)
+					.price_block
+						.price 4001 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6977,'#ida6977')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 126/124M NR201 (НкШЗ)')
+					input.ga_id(type='hidden', value='6977')
+					input.ga_price(type='hidden', value='4001')
+					input.ga_brand(type='hidden', value='НкШЗ')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='22')
+				#ida6978.item.ga_item
+					a.ga_st2(href='/21575r175_126124m_orjak_4_sava')
+						.avx_block
+							img(src='/content/proc/sml_img20712297139.jpg')
+					a.ga_st2(href='/21575r175_126124m_orjak_4_sava')
+						.name_block 215/75R17,5 126/124M ORJAK 4 (Sava)
+					.price_block
+						.price 4648 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6978,'#ida6978')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 126/124M ORJAK 4 (Sava)')
+					input.ga_id(type='hidden', value='6978')
+					input.ga_price(type='hidden', value='4648')
+					input.ga_brand(type='hidden', value='Sava')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='23')
+				#ida7256.item.ga_item
+					a.ga_st2(href='/31580r225_157154m_s201_aplus')
+						.avx_block
+							img(src='/content/proc/sml_img18872685059.jpg')
+					a.ga_st2(href='/31580r225_157154m_s201_aplus')
+						.name_block 315/80R22,5 157/154M S201 (APLUS)
+					.price_block
+						.price 6177 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(7256,'#ida7256')") Купить
+					input.ga_name(type='hidden', value='315/80R22,5 157/154M S201 (APLUS)')
+					input.ga_id(type='hidden', value='7256')
+					input.ga_price(type='hidden', value='6177')
+					input.ga_brand(type='hidden', value='APLUS')
+					input.ga_category(type='hidden', value='861')
+					input.ga_position(type='hidden', value='24')
+				#ida6979.item.ga_item
+					a.ga_st2(href='/21575r175_126124m_regrhd_ii_goodyear')
+						.avx_block
+							img(src='/content/proc/sml_img27706505036.jpg')
+					a.ga_st2(href='/21575r175_126124m_regrhd_ii_goodyear')
+						.name_block 215/75R17,5 126/124M REG,RHD II+ (Goodyear)
+					.price_block
+						.price 6059 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6979,'#ida6979')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 126/124M REG,RHD II+ (Goodyear)')
+					input.ga_id(type='hidden', value='6979')
+					input.ga_price(type='hidden', value='6059')
+					input.ga_brand(type='hidden', value='Goodyear')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='25')
+				#ida6980.item.ga_item
+					a.ga_st2(href='/21575r175_126124m_oregiocontrl_fulda_')
+						.avx_block
+							img(src='/content/proc/sml_img20206022560.jpg')
+					a.ga_st2(href='/21575r175_126124m_oregiocontrl_fulda_')
+						.name_block 215/75R17,5 126/124M OREGIOCONTRL (Fulda) 
+					.price_block
+						.price 4930 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6980,'#ida6980')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 126/124M OREGIOCONTRL (Fulda) ')
+					input.ga_id(type='hidden', value='6980')
+					input.ga_price(type='hidden', value='4930')
+					input.ga_brand(type='hidden', value='Fulda')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='26')
+				#ida6981.item.ga_item
+					a.ga_st2(href='/21575r175_126124m_regioforce_fulda')
+						.avx_block
+							img(src='/content/proc/sml_img78911512494.jpg')
+					a.ga_st2(href='/21575r175_126124m_regioforce_fulda')
+						.name_block 215/75R17,5 126/124M REGIOFORCE (Fulda)
+					.price_block
+						.price 5001 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6981,'#ida6981')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 126/124M REGIOFORCE (Fulda)')
+					input.ga_id(type='hidden', value='6981')
+					input.ga_price(type='hidden', value='5001')
+					input.ga_brand(type='hidden', value='Fulda')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='27')
+				#ida6982.item.ga_item
+					a.ga_st2(href='/21575r175_126124m_sp344_dunlop')
+						.avx_block
+							img(src='/content/proc/sml_img78136880891.jpg')
+					a.ga_st2(href='/21575r175_126124m_sp344_dunlop')
+						.name_block 215/75R17,5 126/124M SP344 (Dunlop)
+					.price_block
+						.price 5648 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6982,'#ida6982')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 126/124M SP344 (Dunlop)')
+					input.ga_id(type='hidden', value='6982')
+					input.ga_price(type='hidden', value='5648')
+					input.ga_brand(type='hidden', value='Dunlop')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='28')
+				#ida6983.item.ga_item
+					a.ga_st2(href='/21575r175_126124m_sp444_dunlop')
+						.avx_block
+							img(src='/content/proc/sml_img65062240106.jpg')
+					a.ga_st2(href='/21575r175_126124m_sp444_dunlop')
+						.name_block 215/75R17,5 126/124M SP444 (Dunlop)
+					.price_block
+						.price 5565 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6983,'#ida6983')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 126/124M SP444 (Dunlop)')
+					input.ga_id(type='hidden', value='6983')
+					input.ga_price(type='hidden', value='5565')
+					input.ga_brand(type='hidden', value='Dunlop')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='29')
+				#ida6984.item.ga_item
+					a.ga_st2(href='/21575r175_126124m_nf202_nkshz')
+						.avx_block
+							img(src='/content/proc/sml_img92941832733.jpg')
+					a.ga_st2(href='/21575r175_126124m_nf202_nkshz')
+						.name_block 215/75R17,5 126/124М NF202 (НкШЗ)
+					.price_block
+						.price 3883 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6984,'#ida6984')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 126/124М NF202 (НкШЗ)')
+					input.ga_id(type='hidden', value='6984')
+					input.ga_price(type='hidden', value='3883')
+					input.ga_brand(type='hidden', value='НкШЗ')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='30')
+				#ida6985.item.ga_item
+					a.ga_st2(href='/21575r175_128126m_regrhs_ii_hl_goodyear')
+						.avx_block
+							img(src='/content/proc/sml_img86472219908.jpg')
+					a.ga_st2(href='/21575r175_128126m_regrhs_ii_hl_goodyear')
+						.name_block 215/75R17,5 128/126M REG.RHS II+ HL (Goodyear)
+					.price_block
+						.price 5942 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6985,'#ida6985')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 128/126M REG.RHS II+ HL (Goodyear)')
+					input.ga_id(type='hidden', value='6985')
+					input.ga_price(type='hidden', value='5942')
+					input.ga_brand(type='hidden', value='Goodyear')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='31')
+				#ida6986.item.ga_item
+					a.ga_st2(href='/21575r175_135133j_cargo_4_sava')
+						.avx_block
+							img(src='/content/proc/sml_img45601147171.jpg')
+					a.ga_st2(href='/21575r175_135133j_cargo_4_sava')
+						.name_block 215/75R17,5 135/133J CARGO 4 (Sava)
+					.price_block
+						.price 4942 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6986,'#ida6986')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 135/133J CARGO 4 (Sava)')
+					input.ga_id(type='hidden', value='6986')
+					input.ga_price(type='hidden', value='4942')
+					input.ga_brand(type='hidden', value='Sava')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='32')
+				#ida6987.item.ga_item
+					a.ga_st2(href='/21575r175_135133j_ecotonn_fulda')
+						.avx_block
+							img(src='/content/proc/sml_img24172031232.jpg')
+					a.ga_st2(href='/21575r175_135133j_ecotonn_fulda')
+						.name_block 215/75R17,5 135/133J ECOTONN (Fulda)
+					.price_block
+						.price 5118 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6987,'#ida6987')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 135/133J ECOTONN (Fulda)')
+					input.ga_id(type='hidden', value='6987')
+					input.ga_price(type='hidden', value='5118')
+					input.ga_brand(type='hidden', value='Fulda')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='33')
+				#ida6988.item.ga_item
+					a.ga_st2(href='/21575r175_135133j_reg_rht_ii_goodyear')
+						.avx_block
+							img(src='/content/proc/sml_img28809300009.jpg')
+					a.ga_st2(href='/21575r175_135133j_reg_rht_ii_goodyear')
+						.name_block 215/75R17,5 135/133J REG RHT II (Goodyear)
+					.price_block
+						.price 6412 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6988,'#ida6988')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 135/133J REG RHT II (Goodyear)')
+					input.ga_id(type='hidden', value='6988')
+					input.ga_price(type='hidden', value='6412')
+					input.ga_brand(type='hidden', value='Goodyear')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='34')
+				#ida6989.item.ga_item
+					a.ga_st2(href='/21575r175_135133j_s201_aplus')
+						.avx_block
+							img(src='/content/proc/sml_img93843096327.jpg')
+					a.ga_st2(href='/21575r175_135133j_s201_aplus')
+						.name_block 215/75R17,5 135/133J S201 (APLUS)
+					.price_block
+						.price 3118 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6989,'#ida6989')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 135/133J S201 (APLUS)')
+					input.ga_id(type='hidden', value='6989')
+					input.ga_price(type='hidden', value='3118')
+					input.ga_brand(type='hidden', value='APLUS')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='35')
+				#ida6990.item.ga_item
+					a.ga_st2(href='/21575r175_135133j_sp252_dunlop')
+						.avx_block
+							img(src='/content/proc/sml_img71267256238.jpg')
+					a.ga_st2(href='/21575r175_135133j_sp252_dunlop')
+						.name_block 215/75R17,5 135/133J SP252 (Dunlop)
+					.price_block
+						.price 6000 грн
+					.stars_block
+						.star
+						.star
+						.star
+						.star.off
+						.star.off
+					.btn_block
+						a(href="javascript:AddToBasket(6990,'#ida6990')") Купить
+					input.ga_name(type='hidden', value='215/75R17,5 135/133J SP252 (Dunlop)')
+					input.ga_id(type='hidden', value='6990')
+					input.ga_price(type='hidden', value='6000')
+					input.ga_brand(type='hidden', value='Dunlop')
+					input.ga_category(type='hidden', value='856')
+					input.ga_position(type='hidden', value='36')
+
+	+footer()

@@ -535,3 +535,25 @@ a {
 .tablinks a {
 	text-decoration: none !important;
 }
+
+body:not(.main-page) .ddn_menu {
+	display: none;
+}
+
+
+.item:hover {
+	border-width: 1px;
+	box-shadow: inset 0 0 0 2px $primary;
+}
+
+.filters_btn a,
+.flt_switch a {
+	text-decoration: none !important;
+}
+
+@include media-breakpoint-up(xl) {
+
+	.leftside.grpls {
+		display: block !important;
+	}
+}

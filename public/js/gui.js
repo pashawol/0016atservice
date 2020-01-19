@@ -193,14 +193,14 @@ $(document).ready(function () {
 			$('.ddn_menu').addClass('ddn_fix');
 
 			if (!menutouch) {
-				$('.mddn').hide();
+				$('.main-page .mddn').hide();
 			}
 		} else {
 			$('.menu_holder').removeClass('m_fix');
 			$('.ddn_menu').removeClass('ddn_fix');
 
 			if (!menutouch) {
-				$('.mddn').show();
+				$('.main-page .mddn').show();
 			}
 		}
 	});
