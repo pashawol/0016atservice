@@ -23,83 +23,450 @@
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
-	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]--><div class="ofs" style="position: fixed; left: 0px; top: 0px; width: 1px; height: 1px;"></div>
 		<div class="main-wrapper">
-			<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
-			</div>
-			<div class="menu-mobile menu-mobile--js d-lg-none">
-				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
-				</div>
-				<div class="menu-mobile__inner">
-					<ul class="menu-mobile__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="/" itemprop="url">Главная</a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Услуги  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Подбор септика   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Акции </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> О компании  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Доставка и оплата </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Клиентам  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Наши работы   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Контакты </a>
-						</li>
-					</ul>
-					<div class="text-right"></div>
-				</div>
-			</div>
-			<!--  мобильное меню-->
 			<!-- start HEADER.header-->
 			<header class="header block-with-lazy">
 				<!-- start .top-line-->
 				<div class="top-line block-with-lazy">
 					<div class="container">
-						<div class="row">top-line</div>
+						<div class="row">
+							<div class="col-xl-3 text-xl-left text-center"><a class="top-line__logo" href="#"><img src="img/@2x/logo.png"/></a>
+							</div>
+							<div class="col d-none d-xl-block">
+								<div class="s_section">
+									<div class="lang_sw"><a href="#">Укр</a> | <a class="act" href="#">Рус</a></div>
+									<form action="/search" method="post">
+										<input type="text" name="searchstring" placeholder="Поиск"/>
+										<button type="button">
+											<svg class="icon icon-search ">
+												<use xlink:href="img/svg/sprite.svg#search"></use>
+											</svg>
+										</button>
+										<input type="submit" style="display: none;"/>
+									</form>
+								</div>
+							</div>
+							<div class="col-auto d-none d-xl-block">
+								<div class="c_section">
+									<div class="bigphone">
+										<noindex><a rel="nofollow" href="tel:+380800401001">0 800 401 001</a></noindex><small>Бесплатно по Украине</small>
+									</div>
+									<div class="cabblock"><a class="_cbin" id="cab" href="#">Вход</a><br/><a id="reg" href="/registration">Регистрация</a></div>
+								</div>
+							</div>
+							<div class="col-auto d-none d-xl-block text-center">
+								<div class="b_section">
+									<div class="phoneblock">
+										<noindex><a rel="nofollow" href="tel:+380508000001">050 800 00 01</a><br/><a rel="nofollow" href="tel:+380678000001">067 800 00 01</a><br/></noindex><a id="tocall" href="#">Заказать звонок</a>
+									</div>
+									<div class="basket" id="basket"><a href="#"><b>Корзина</b>Ваша корзина<br/>пуста</a></div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- end .top-line-->
-				<!-- start top-nav-->
-				<div class="top-nav block-with-lazy">
-					<div class="container">
-						<ul class="top-nav__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="/" itemprop="url">Главная</a>
+				<div class="menu_holder">
+					<div class="mainmenu"><a href="#">Каталог</a><a href="#">Главная</a><a href="/o_magazine">О магазине</a><a href="/dostavka_mn">Доставка</a><a href="/novosti">Новости</a><a href="/garantii">Гарантии</a><a href="/shinniy_servis">Шинный сервис</a></div>
+					<div class="mob_menu" style="display: none;"><a class="swbtn" href="#"></a><a class="bsbtn" href="/cart"></a></div>
+					<div class="ddn_menu mddn">
+						<ul id="menu">
+							<li>
+								<div>Шины</div>
+								<ul>
+									<li>
+										<div id="gruzovie_shini">Грузовые шины</div>
+									</li>
+									<li>
+										<div id="legkovie_shini">Легковые шины</div>
+									</li>
+									<li>
+										<div id="specshini">Спецшины</div>
+									</li>
+								</ul>
 							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Услуги  </a>
+							<li>
+								<div id="diski">Диски</div>
 							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Подбор септика   </a>
+							<li>
+								<div id="kameri">Камеры</div>
 							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Акции </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> О компании  </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> Доставка и оплата </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> Клиентам  </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> Наши работы   </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Контакты </a>
+							<li>
+								<div id="akkumulyatori">Аккумуляторы</div>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<!-- end top-nav-->
 			</header>
 			<!-- end HEADER.header-->
-			<!-- start header-block-->
-			<div class="header-block" id="header-block">
-				<div class="container">
-					<h1>header-block</h1>
-					<div class="row"></div>
+			<div class="midsect">
+				<div class="ls"></div>
+				<div class="rs"><img src="images/banner.jpg"/></div>
+			</div>
+			<div class="forms">
+				<div class="lform">
+					<div class="mob_cpt" style="display: none">Подбор шин</div>
+					<div class="lf_cap lf_cap2"></div>
+					<div class="tablinks"><a class="active" id="tb2" href="#" rel="2">Грузовые шины</a><a id="tb1" href="#" rel="1">Легковые шины</a><a id="tb3" href="#" rel="3">Спецшины</a><a id="tb4" href="#" rel="4">Камеры</a></div>
+					<div class="tabset tbss" id="tab2">
+						<div class="cb1">
+							<fieldset>
+								<label for="t_width">Ширина</label>
+								<select id="t_country" name="t_width">
+									<option selected="selected" value="">---</option>
+									<option value="6.5">6.5</option>
+									<option value="7%2C50">7,50</option>
+									<option value="7">7</option>
+									<option value="7.5">7.5</option>
+									<option value="8.25">8.25</option>
+									<option value="8.5">8.5</option>
+									<option value="9">9</option>
+									<option value="9.5">9.5</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="205">205</option>
+									<option value="215">215</option>
+									<option value="225">225</option>
+									<option value="235">235</option>
+									<option value="245">245</option>
+									<option value="255">255</option>
+									<option value="265">265</option>
+									<option value="275">275</option>
+									<option value="285">285</option>
+									<option value="295">295</option>
+									<option value="305">305</option>
+									<option value="315">315</option>
+									<option value="355">355</option>
+									<option value="385">385</option>
+									<option value="425">425</option>
+									<option value="435">435</option>
+									<option value="445">445</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb2">
+							<fieldset>
+								<label for="t_diameter">Профиль</label>
+								<select id="t_ltp" name="t_diameter">
+									<option selected="selected" value="">---</option>
+									<option value="0">0</option>
+									<option value="45">45</option>
+									<option value="50">50</option>
+									<option value="55">55</option>
+									<option value="60">60</option>
+									<option value="65">65</option>
+									<option value="70">70</option>
+									<option value="75">75</option>
+									<option value="80">80</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb3">
+							<fieldset>
+								<label for="t_et">Диаметр</label>
+								<select id="t_class" name="t_et">
+									<option selected="selected" value="">---</option>
+									<option value="R24">R24</option>
+									<option value="R17%2C5">R17,5</option>
+									<option value="R15">R15</option>
+									<option value="R20">R20</option>
+									<option value="R17.5">R17.5</option>
+									<option value="R22%2C5">R22,5</option>
+									<option value="R19%2C5">R19,5</option>
+									<option value="R16">R16</option>
+									<option value="24%2C5">24,5</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb4">
+							<fieldset>
+								<label for="t_vendor">Тип оси</label>
+								<select id="t_ost" name="t_vendor">
+									<option selected="selected" value="">---</option>
+									<option value="%CF%F0%E8%E2%EE%E4%ED%E0%FF">Приводная</option>
+									<option value="%CF%F0%E8%F6%E5%EF%ED%E0%FF">Прицепная</option>
+									<option value="%E2%E5%E4%F3%F9%E0%FF">ведущая</option>
+									<option value="%D0%F3%EB%E5%E2%E0%FF">Рулевая</option>
+									<option value="%D3%ED%E8%E2%E5%F0%F1%E0%EB%FC%ED%E0%FF">Универсальная</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb5">
+							<fieldset>
+								<label for="t_et">Назначение</label>
+								<select id="t_dst" name="t_et">
+									<option selected="selected" value="">---</option>
+									<option value="%D3%ED%E8%E2%E5%F0%F1%E0%EB%FC%ED%E0%FF%2C+%E0%E2%F2%EE%E1%F3%F1%ED%E0%FF">Универсальная, автобусная</option>
+									<option value="%D3%ED%E8%E2%E5%F0%F1%E0%EB%FC%ED%E0%FF">Универсальная</option>
+									<option value="%CC%E0%E3%E8%F1%F2%F0%E0%EB%FC%ED%FB%E5+%EF%E5%F0%E5%E2%EE%E7%EA%E8">Магистральные перевозки</option>
+									<option value="%E2%ED%E5%E4%EE%F0%EE%E6%ED%EE%E5">внедорожное</option>
+									<option value="%D1%EC%E5%F8%E0%ED%ED%EE%E5">Смешанное</option>
+									<option value="%C4%E0%EB%FC%ED%E5%F0%E5%E9%F1%EE%E2%FB%E5+%EF%E5%F0%E5%E2%EE%E7%EA%E8+">Дальнерейсовые перевозки </option>
+									<option value="%D0%E5%E3%E8%EE%ED%E0%EB%FC%ED%E0%FF">Региональная</option>
+									<option value="%C0%E2%F2%EE%E1%F3%F1%ED%EE%E5">Автобусное</option>
+									<option value="%F0%E5%E3%E8%EE%ED%E0%EB%FC%ED%EE%E5">региональное</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb6">
+							<fieldset>
+								<label for="t_vendor">Бренд</label>
+								<select id="t_vendor" name="t_vendor">
+									<option selected="selected" value="">---</option>
+									<option value="Aufine">Aufine</option>
+									<option value="Jinyu">Jinyu</option>
+									<option value="Debi%F1a">Debiсa</option>
+									<option value="Goodyear">Goodyear</option>
+									<option value="Compasal">Compasal</option>
+									<option value="%CD%EA%D8%C7">НкШЗ</option>
+									<option value="Hifly">Hifly</option>
+									<option value="Changfeng">Changfeng</option>
+									<option value="Fulda">Fulda</option>
+									<option value="Roadshine">Roadshine</option>
+									<option value="Safecess">Safecess</option>
+									<option value="APLUS">APLUS</option>
+									<option value="Kelly">Kelly</option>
+									<option value="Hankook">Hankook</option>
+									<option value="YellowSea">YellowSea</option>
+									<option value="LingLong">LingLong</option>
+									<option value="%28Hankook">(Hankook</option>
+									<option value="Ovation">Ovation</option>
+									<option value="TRANSKING">TRANSKING</option>
+									<option value="Sava">Sava</option>
+									<option value="SYRON">SYRON</option>
+									<option value="Firemax">Firemax</option>
+									<option value="Dunlop">Dunlop</option>
+									<option value="Kpatos">Kpatos</option>
+								</select>
+							</fieldset>
+						</div><a class="flt_button" href="#" rel="2">Подобрать</a>
+					</div>
+					<div class="tabset tbss" id="tab1" style="display: none;">
+						<div class="cb1">
+							<fieldset>
+								<label for="t_width">Ширина</label>
+								<select id="t_country" name="t_width">
+									<option selected="selected" value="">---</option>
+									<option value="155">155</option>
+									<option value="165">165</option>
+									<option value="175">175</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb2">
+							<fieldset>
+								<label for="t_diameter">Профиль</label>
+								<select id="t_ltp" name="t_diameter">
+									<option selected="selected" value="">---</option>
+									<option value="65">65</option>
+									<option value="70">70</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb3">
+							<fieldset>
+								<label for="t_et">Диаметр</label>
+								<select id="t_class" name="t_et">
+									<option selected="selected" value="">---</option>
+									<option value="R14">R14</option>
+									<option value="R13">R13</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb4">
+							<fieldset>
+								<label for="t_vendor">Сезон</label>
+								<select id="t_cover" name="t_vendor">
+									<option selected="selected" value="">---</option>
+									<option value="%EB%E5%F2%EE">лето</option>
+									<option value="%C7%E8%EC%E0">Зима</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb5">
+							<fieldset>
+								<label for="t_et">Шип</label>
+								<select id="t_for" name="t_et">
+									<option selected="selected" value="">---</option>
+									<option value="%CD%E5+%F8%E8%EF%EE%E2%E0%ED%ED%E0%FF">Не шипованная</option>
+									<option value="%ED%E5%F8%E8%EF%EE%E2%E0%ED%ED%E0%FF">нешипованная</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb6">
+							<fieldset>
+								<label for="t_vendor">Бренд</label>
+								<select id="t_vendor" name="t_vendor">
+									<option selected="selected" value="">---</option>
+									<option value="Nexen">Nexen</option>
+									<option value="%D3%EA%F0%E0%E8%ED%E0">Украина</option>
+									<option value="Toyo">Toyo</option>
+								</select>
+							</fieldset>
+						</div><a class="flt_button" href="#" rel="1">Подобрать</a>
+					</div>
+					<div class="tabset tbss" id="tab3" style="display: none;">
+						<div class="cbx41">
+							<fieldset>
+								<label for="t_width">Ширина</label>
+								<select id="t_country" name="t_width">
+									<option selected="selected" value="">---</option>
+									<option value="75">75</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cbx42">
+							<fieldset>
+								<label for="t_diameter">Профиль</label>
+								<select id="t_ltp" name="t_diameter">
+									<option selected="selected" value="">---</option>
+									<option value="10%2C0">10,0</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cbx43">
+							<fieldset>
+								<label for="t_et">Диаметр</label>
+								<select id="t_class" name="t_et">
+									<option selected="selected" value="">---</option>
+									<option value="15%2C3">15,3</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cbx44">
+							<fieldset>
+								<label for="t_vendor">Бренд</label>
+								<select id="t_vendor" name="t_vendor">
+									<option selected="selected" value="">---</option>
+									<option value="%D7%E5%F5%E8%FF">Чехия</option>
+								</select>
+							</fieldset>
+						</div><a class="flt_button" href="#" rel="3">Подобрать</a>
+					</div>
+					<div class="tabset tbss" id="tab4" style="display: none;">
+						<div class="cbx41">
+							<fieldset>
+								<label for="t_width">Ширина</label>
+								<select id="t_country" name="t_width">
+									<option selected="selected" value="">---</option>
+									<option value="11%2C2%2F12%2C4%2F13%2C6">11,2/12,4/13,6</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cbx42">
+							<fieldset>
+								<label for="t_diameter">Профиль</label>
+								<select id="t_ltp" name="t_diameter">
+									<option selected="selected" value="">---</option>
+									<option value="p">p</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cbx43">
+							<fieldset>
+								<label for="t_et">Диаметр</label>
+								<select id="t_class" name="t_et">
+									<option selected="selected" value="">---</option>
+									<option value="36">36</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cbx44">
+							<fieldset>
+								<label for="t_vendor">Бренд</label>
+								<select id="t_vendor" name="t_vendor">
+									<option selected="selected" value="">---</option>
+									<option value="%CF%EE%EB%FC%F8%E0">Польша</option>
+								</select>
+							</fieldset>
+						</div><a class="flt_button" href="#" rel="4">Подобрать</a>
+					</div>
+				</div>
+				<div class="rform">
+					<div class="mob_cpt" style="display: none">Подбор дисков</div>
+					<div class="rf_cap"></div>
+					<div class="tabset">
+						<div class="cb1">
+							<fieldset>
+								<label for="t_width">Ширина</label>
+								<select id="t_country" name="t_width">
+									<option selected="selected" value="">---</option>
+									<option value="4%2C5J">4,5J</option>
+									<option value="6">6</option>
+									<option value="6%2C75">6,75</option>
+									<option value="7%2C5">7,5</option>
+									<option value="8%2C25">8,25</option>
+									<option value="9">9</option>
+									<option value="11%2C75">11,75</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb2">
+							<fieldset>
+								<label for="t_diameter">Диаметр</label>
+								<select id="t_class" name="t_diameter">
+									<option selected="selected" value="">---</option>
+									<option value="R22%2C5">R22,5</option>
+									<option value="R19%2C5">R19,5</option>
+									<option value="R17%2C5">R17,5</option>
+									<option value="13">13</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb3">
+							<fieldset>
+								<label for="t_et">Вылет</label>
+								<select id="t_eta" name="t_et">
+									<option selected="selected" value="">---</option>
+									<option value="0">0</option>
+									<option value="2">2</option>
+									<option value="115">115</option>
+									<option value="116">116</option>
+									<option value="120">120</option>
+									<option value="121%2C5">121,5</option>
+									<option value="125">125</option>
+									<option value="127%2C5">127,5</option>
+									<option value="127">127</option>
+									<option value="128">128</option>
+									<option value="128%2C5">128,5</option>
+									<option value="132">132</option>
+									<option value="132%2C5">132,5</option>
+									<option value="135">135</option>
+									<option value="135.5">135.5</option>
+									<option value="142">142</option>
+									<option value="143">143</option>
+									<option value="146%2C5">146,5</option>
+									<option value="150">150</option>
+									<option value="152">152</option>
+									<option value="155">155</option>
+									<option value="161">161</option>
+									<option value="165">165</option>
+									<option value="175">175</option>
+									<option value="176">176</option>
+									<option value="177%2C5">177,5</option>
+								</select>
+							</fieldset>
+						</div>
+						<div class="cb4">
+							<fieldset>
+								<label for="t_vendor">Бренд</label>
+								<select id="t_vendor" name="t_vendor">
+									<option selected="selected" value="">---</option>
+									<option value="%C4%EE%F0%EE%E6%ED%E0%FF+%EA%E0%F0%F2%E0">Дорожная карта</option>
+									<option value="Hayes+Lemmerz">Hayes Lemmerz</option>
+									<option value="%CA%E8%F2%E0%E9">Китай</option>
+									<option value="Jantsa">Jantsa</option>
+									<option value="%CA%F0%CA%C7">КрКЗ</option>
+								</select>
+							</fieldset>
+						</div><a class="flt_button" href="#" rel="5">Подобрать</a>
+					</div>
 				</div>
 			</div>
-			<!-- end header-block-->
 			<!-- start s-main-filter-->
 			<section class="s-main-filter section" id="s-main-filter">
 				<div class="container">
@@ -175,7 +542,10 @@
 		</div>
 		<!-- modal-->
 		<script src="js/lazy.js"></script>
-		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script src="js/gui.js"></script>
+		<script src="js/std.js"></script>
 		<!-- полифил для picture-->
 		<script src="libs/picturefill/picturefill.min.js"></script>
 		<!-- полифил для object-fit-->

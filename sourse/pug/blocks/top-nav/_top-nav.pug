@@ -19,9 +19,32 @@ mixin mob-mnu()
 			.text-right
 	//  мобильное меню
 mixin top-nav() 
-	// start top-nav
-	+b.top-nav.block-with-lazy
-		.container
-			+mnu()
-					
-	// end top-nav
+	.menu_holder
+		.mainmenu
+			a(href='#') Каталог
+			a(href='#') Главная
+			a(href='/o_magazine') О магазине
+			a(href='/dostavka_mn') Доставка
+			a(href='/novosti') Новости
+			a(href='/garantii') Гарантии
+			a(href='/shinniy_servis') Шинный сервис
+		.mob_menu(style='display: none;')
+			a.swbtn(href='#')
+			a.bsbtn(href='/cart')
+		.ddn_menu.mddn
+			ul#menu
+				li
+					div Шины
+					ul
+						li
+							#gruzovie_shini Грузовые шины
+						li
+							#legkovie_shini Легковые шины
+						li
+							#specshini Спецшины
+				li
+					#diski Диски
+				li
+					#kameri Камеры
+				li
+					#akkumulyatori Аккумуляторы

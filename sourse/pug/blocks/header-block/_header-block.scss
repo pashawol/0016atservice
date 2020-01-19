@@ -1,7 +1,7 @@
-.header-block {
+.forms {
 	display: block;
- 
-	
+
+
 	// 
 	@include media-breakpoint-up(xl) {}
 
@@ -30,9 +30,33 @@
 	// 
 	@include media-breakpoint-down(xl) {}
 
-	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(lg) {
+		margin-top: 30px;
+		display: flex;
 
-	@include media-breakpoint-down(md) {}
+		.lform,
+		.rform {
+			padding-top: 0;
+			margin-bottom: 30px;
+		}
+
+		.mob_cpt {
+			margin-top: 0;
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		display: block;
+
+		.lform,
+		.rform {
+			width: 100%;
+		}
+	}
+
+	.flt_button {
+		min-width: 150px;
+	}
 
 	@include media-breakpoint-down(sm) {}
 
