@@ -109,8 +109,6 @@
 								<meta itemprop="position" content="2"/></a></li>
 					</ol>
 				</nav>
-			</div>
-			<div class="container">
 				<div class="section-title">
 					<h2>Грузовые шины</h2>
 				</div>
@@ -1016,6 +1014,7 @@
 							<input class="ga_position" type="hidden" value="36">
 						</div>
 					</div>
+					<div class="pager"><a class="pg_act" href="#">1</a><a href="http://atservice.ua/gruzovie_shini?page=2">2</a><a href="http://atservice.ua/gruzovie_shini?page=3">3</a><a href="http://atservice.ua/gruzovie_shini?page=4">4</a><a href="http://atservice.ua/gruzovie_shini?page=5">5</a><a href="http://atservice.ua/gruzovie_shini?page=6">6</a><a href="http://atservice.ua/gruzovie_shini?page=7">7</a><a href="http://atservice.ua/gruzovie_shini?page=8">8</a><a href="http://atservice.ua/gruzovie_shini?page=9">9</a><a href="http://atservice.ua/gruzovie_shini?page=10">10</a><a href="http://atservice.ua/gruzovie_shini?page=11">11</a><a href="http://atservice.ua/gruzovie_shini?page=12">12</a><a href="http://atservice.ua/gruzovie_shini?page=13">13</a><a href="http://atservice.ua/gruzovie_shini?page=14">14</a><a href="http://atservice.ua/gruzovie_shini?page=15">15</a><a href="http://atservice.ua/gruzovie_shini?page=16">16</a><a href="http://atservice.ua/gruzovie_shini?page=17">17</a><a href="http://atservice.ua/gruzovie_shini?page=18">18</a><a href="http://atservice.ua/gruzovie_shini?page=19">19</a><a href="http://atservice.ua/gruzovie_shini?page=20">20</a><a href="http://atservice.ua/gruzovie_shini?page=21">21</a><a href="http://atservice.ua/gruzovie_shini?page=22">22</a><a href="http://atservice.ua/gruzovie_shini?page=23">23</a><a href="http://atservice.ua/gruzovie_shini?page=24">24</a><a href="http://atservice.ua/gruzovie_shini?page=25">25</a><a href="http://atservice.ua/gruzovie_shini?page=26">26</a><a href="http://atservice.ua/gruzovie_shini?page=27">27</a><a href="http://atservice.ua/gruzovie_shini?page=28">28</a></div>
 				</div>
 			</div>
 			<footer class="footer block-with-lazy">
@@ -1081,35 +1080,36 @@
 				</div>
 			</footer>
 		</div>
-		<div class="d-none">
-			<div class="form-wrap modal-win modal-form" id="modal-call">
-				<form>
-					<input type="hidden" name="example-input-field"/>
-					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
-					<input class="utm_source" type="hidden" name="utm_source"/>
-					<input class="utm_term" type="hidden" name="utm_term"/>
-					<input class="utm_medium" type="hidden" name="utm_medium"/>
-					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
-					<div class="text-center">
-						<div class="form-wrap__title h3 ttu">Обратный звонок
-						</div>
-						<p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
-					</div>
-					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя" name="text" required="required"/> 
-					</div>
-					<!-- +e.input-wrap-->
-					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
-					</div>
-					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Рассчитать"/>
-					<div class="form-wrap__polite">
-						<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
-						</label>
-					</div>
-				</form>
+		<div class="ofs" style="position: fixed; left: 0px; top: 0px; width: 1px; height: 1px;"></div>
+		<div class="cbx" id="sent" style="display: none;">
+			<div class="c_box_container">
+				<div class="c_box">
+					<div class="_capt">Спасибо!</div>                    Ваше сообщение отправлено<br/>и будет обработано в ближайшее время.<br/><a class="_cb_btn _cb_close" href="#">Ok</a>
+				</div>
 			</div>
-			<!-- #modal-call-->
 		</div>
-		<!-- modal-->
+		<div class="cbx" id="_order" style="display: none;">
+			<div class="c_box_container">
+				<div class="c_box">
+					<div class="_capt">Заказ обратного звонка</div>
+					<div class="ordering"></div>
+					<input class="mb_input" id="as_name" type="text" placeholder="ФИО"/><br/>
+					<input class="mb_input" id="as_name" type="text" placeholder="Телефон"/><br/>
+					<input class="mb_input" id="as_name" type="text" placeholder="Email"/><br/><a class="_cb_btn _cb_send" href="#">Отправить</a><a class="_cb_btn _cb_close" href="#" style="opacity: 0.5;">Отмена</a>
+				</div>
+			</div>
+		</div>
+		<div class="cbx" id="_login" style="display:none;">
+			<div class="c_box_container">
+				<div class="c_box">
+					<div class="_capt">Вход в персональный кабинет</div>
+					<div id="wrong" style="color: red; padding-bottom: 20px; display: none;">Неверно введен логин или пароль!</div>
+					<input class="mb_input" id="as_login" type="text" placeholder="email"/><br/>
+					<input class="mb_input" id="as_pass" type="password" placeholder="пароль"/><br/>
+					<div>Нет учетной записи? <a href="/registration">Зарегистрируйтесь!</a></div><a class="_cb_btn" id="_lgn" href="#">Вход</a><a class="_cb_btn _cb_close" href="#" style="opacity: 0.5;">Отмена</a>
+				</div>
+			</div>
+		</div>
 		<script src="js/lazy.js"></script>
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery-ui.js"></script>

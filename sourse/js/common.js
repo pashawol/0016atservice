@@ -242,6 +242,16 @@ function eventHandler() {
 		e.preventDefault();
 		$(".leftside.grpls").slideToggle();
 	})
+
+	$('#form_city').attr('disabled', 'disabled');
+	$('#form_region').change(function () {
+		var city = $(this).val();
+		$.post("admin/ddx.php?act=getcities", { city: city }, function (data) {
+			$('#form_city').removeAttr('disabled');
+			$('#form_city').html(data);
+		});
+	});
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

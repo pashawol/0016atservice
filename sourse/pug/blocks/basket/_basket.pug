@@ -13,7 +13,7 @@ mixin basket()
 							input#__quant(type='hidden', value='100')
 							input#__ids(type='hidden', value='6944')
 						td(style='padding-left: 10px; padding-bottom: 4px;', width='100%')
-							h1
+							.h1
 								| Hankook AH35  215/75R17,5
 								a(style='margin-left: 10px;', href='javascript:delBSitem(6944)')
 									img(src='images/cross.png')
@@ -207,12 +207,3 @@ mixin basket()
 							#dv(style='display: none; white-space: nowrap;')
 								input(type='button', onclick='javascript:CancelDelivery()', value='Отмена')
 								input(type='button', onclick='javascript:DeliveryOrder()', value='Отправить')
-		script(type='text/javascript').
-			$('#form_city').attr('disabled','disabled');
-			$('#form_region').change(function(){
-			var city=$(this).val();
-			$.post("admin/ddx.php?act=getcities",{city:city},function(data){
-			$('#form_city').removeAttr('disabled');
-			$('#form_city').html(data);
-			});
-			});

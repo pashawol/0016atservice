@@ -557,3 +557,54 @@ body:not(.main-page) .ddn_menu {
 		display: block !important;
 	}
 }
+
+.bsi_minus,
+.bsi_plus {
+	width: 16px;
+}
+
+.bs_ln .h1 {
+	font-size: 22px;
+	font-weight: 400;
+	color: silver;
+}
+
+.basket_data {
+	overflow-x: auto;
+	position: relative;
+}
+
+.basket_data table {
+	min-width: 650px;
+}
+
+@include media-breakpoint-down(sm) {
+	._summary {
+		padding: 20px 0;
+
+		table,
+		tr,
+		td {
+			display: block;
+		}
+	}
+}
+
+.bsi_quant {
+	font-size: rem(14);
+}
+
+a {
+	text-decoration: none;
+}
+
+._cb_btn {
+	color: #ffffff !important;
+	text-decoration: none !important;
+}
+
+.pager {
+	>* {
+		box-sizing: initial;
+	}
+}
