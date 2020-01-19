@@ -19,7 +19,12 @@ html {
 
 body,
 html {
-	font-size: $em-base;
+	@include media-breakpoint-up(md) {
+
+		font-size: $em-base;
+	}
+
+	font-size: 14px;
 	// @include font-size(1rem);
 }
 
@@ -29,12 +34,29 @@ html {
 	padding-bottom: rem(40px);
 }
 
+.page-title,
 .section-title {
 	@extend .h2;
-	padding-bottom: em(10);
+	margin-bottom: rem(40px);
+	background-color: #E9E8E8;
 
-	>h2 {
-		font-size: inherit;
+	h1,
+	h2 {
+		display: inline-block;
+		@extend h2;
+		font-weight: bold;
+		background-color: $warning;
+		padding: rem(17px) rem(40);
+		margin-bottom: 0;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			@include triangle(rem(63) rem(10), $warning, right);
+			left: 100%;
+			top: 0;
+		}
 
 		@include media-breakpoint-up(md) {}
 	}
