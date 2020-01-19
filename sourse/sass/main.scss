@@ -42,10 +42,24 @@ $output-bourbon-deprecation-warnings: false;
 @import "./node_modules/bootstrap/scss/breadcrumb";
 
 .breadcrumb {
+  a {
+    color: gray;
+    &:hover {
+      text-decoration: none;
+    }
+  }
   .active {
+    margin-left: rem(30);
+    position: relative;
     a {
-      color: $breadcrumb-active-color;
       pointer-events: none;
+    }
+    &:before {
+      @include triangle(12px 6px, #066ECE transparent, right);
+      position: absolute;
+      left: rem(-15);
+      top: rem(5);
+      content: '';
     }
   }
 }
