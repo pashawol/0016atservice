@@ -1,0 +1,25 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-main-filter/_s-main-filter.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-news/_s-news.pug
+include ../blocks/s-delivery/_s-delivery.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'О магазине'
+	title= title
+block pagecontent 
+	//- +mob-mnu()
+	+header()
+		+top-line()
+		+top-nav()
+	.container
+		+breadcrumb("Главная", title)
+		+title(title)
+	+s-blank-pages
+	+footer()

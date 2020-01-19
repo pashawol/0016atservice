@@ -6,24 +6,20 @@ include ../blocks/s-contact/_s-contact.pug
 include ../blocks/s-main-filter/_s-main-filter.pug
 include ../blocks/s-catalog/_s-catalog.pug
 include ../blocks/s-news/_s-news.pug
+include ../blocks/s-delivery/_s-delivery.pug
 
 block variables
-	- let  mainPage= 'inner-page'
+	- let  mainPage= null
 block title
-	- let  title= 'О магазине'
+	- let  title= 'Новости'
 	title= title
 block pagecontent 
 	//- +mob-mnu()
 	+header()
 		+top-line()
 		+top-nav()
-	//- +header-block()
-
 	.container
 		+breadcrumb("Главная", title)
-
-	//- +s-news()
-	.container
 		+title(title)
-
+	+s-news
 	+footer()
