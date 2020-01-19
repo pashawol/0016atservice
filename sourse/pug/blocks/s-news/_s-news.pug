@@ -1,6 +1,16 @@
 mixin s-news()
 	// start s-news
-	+b.SECTION.s-news.section#s-news&attributes(attributes)
+	+b.s-news#s-news&attributes(attributes)
 		.container
 			block
+			mixin item(n,q,d)
+				+b.news-item.row(href="#")
+					+e.DIV.img-wrap.col-2
+						img.lazy.res-i(src="#" data-src=`img/@2x/news-${n}.jpg` , alt="")
+					+e.description.col-10
+						+e.DIV.headline= q
+						+e.DIV.date= d
+			+item("1", "Асфальт в Украине сходит со снегом: водители могут получить компенсацию", "2018-02-03 02:44:09")
+			+item("2", "Какие шины «обуть» на лето?", "2018-02-03 02:44:09")
+			+item("3", "Goodyear представил прототипы «зеленых» шин", "2018-02-03 02:44:09")
 	// end s-news
