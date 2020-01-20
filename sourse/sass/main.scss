@@ -47,23 +47,44 @@ $output-bourbon-deprecation-warnings: false;
     &:hover {
       text-decoration: none;
     }
+
   }
   .active {
-    margin-left: rem(30);
-    position: relative;
+
     a {
       pointer-events: none;
+      &::after {
+        display: none;
+      }
     }
-    &:before {
+
+  }
+  .breadcrumb-item {
+    position: relative;
+    margin-left: rem(30);
+    &::before {
       @include triangle(12px 6px, #066ECE transparent, right);
       position: absolute;
-      left: rem(-15);
+      right: rem(-23);
       top: rem(5);
       content: '';
     }
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+    &:nth-last-child(1) {
+      &::before {
+        display: none;
+      }
+    }
+
   }
 }
-
+.inner-page {
+  .breadcrumb {
+    margin-bottom: 0;
+  }
+}
 @import "./node_modules/bootstrap/scss/pagination";
 
 .pagination-wrapper ul {

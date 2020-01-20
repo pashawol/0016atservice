@@ -1,0 +1,71 @@
+mixin s-card-product()
+	// start s-card-product
+	+b.SECTION.s-card-product.section#s-card-product&attributes(attributes)
+		.container
+			.border-bottom
+				h1 Hankook AH35 215/75R17,5
+			+e.brief-information
+				+e.availability В наличии: есть в наличии
+				+e.code Артикул: 14981027115
+			.row
+				.col-lg-6
+					a(href='img/@2x/hankook-an35.jpg' data-fancybox="card-item")
+						img.lazy.res-i(src="#" data-src="img/@2x/hankook-an35.jpg" alt="")
+				.col-lg-6
+					+b.product-info
+						+e.rating.text-right
+							+icon('star')
+							+icon('star')
+							+icon('star')
+							+icon('star')
+							+icon('star')
+						+e.price 5177 грн
+						+e.btn.btn-warning(href="#") Купить
+						+e.call
+							input(type="text" placeholder="+38 (XXX) XXX-XX-XX")
+							+e.btn-call.btn-primary(href="#") Быстрый заказ
+						.txt_blk
+							.cpt ХАРАКТЕРИСТИКИ
+							.tblock
+								table
+									tr
+										td ПРОИЗВОДИТЕЛЬ
+										td HANKOOK
+									tr
+										td ШИРИНА
+										td 215
+									tr
+										td ПРОФИЛЬ
+										td 75
+									tr
+										td ДИАМЕТР
+										td R17.5
+
+									tr
+										td НАЗНАЧЕНИЕ
+										td РЕГИОНАЛЬНАЯ
+									tr
+										td ТИП ОСИ
+										td РУЛЕВАЯ
+					.txt_blk
+						.cpt Доставка
+						a(href="https://novaposhta.ua/ru/delivery")
+							img.lazy.res-i(src="#" data-src="img/@2x/np.jpg" alt="")
+						a(href="https://www.sat.ua/ua/order/calculation/")
+							img.lazy.res-i(src="#" data-src="img/@2x/cat.jpg" alt="")
+						a(href="https://intime.ua/ru-calc")
+							img.lazy.res-i(src="#" data-src="img/@2x/int.jpg" alt="")
+						a(href="http://www.delivery-auto.com.ua/ru-RU/Calculator")
+							img.lazy.res-i(src="#" data-src="img/@2x/del.jpg" alt="")
+						.cpt Оплата 
+						ul 
+							li - Наложенный платеж.
+							li - Карта ПриватБанк.
+							li - Наличный расчет.
+							li - Безналичный расчет.
+							li - Безналичный расчет с НДС.
+
+
+
+
+	// end s-card-product
