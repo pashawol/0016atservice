@@ -1,6 +1,36 @@
+
+mixin prod-item(i="content/proc/sml_img48206872660.jpg")
+	+b.item.ga_item
+		a.ga_st2(href='/21575r175_126124m_nr201_nkshz')
+			.avx_block
+				img(src= i)
+		a.ga_st2(href='/21575r175_126124m_nr201_nkshz')
+			.name_block 215/75R17,5 126/124M NR201 (НкШЗ)
+		.price_block
+			.price 4612 грн
+		.stars_block
+			.star
+			.star
+			.star
+			.star.off
+			.star.off
+		.btn_block
+			a(href="javascript:AddToBasket(7486,'#ida7486')") Купить
+		input.ga_name(type='hidden', value='215/75R17,5 126/124M NR201 (НкШЗ)')
+		input.ga_id(type='hidden', value='7486')
+		input.ga_price(type='hidden', value='4612')
+		input.ga_brand(type='hidden', value='НкШЗ')
+		input.ga_category(type='hidden', value='856')
+		input.ga_position(type='hidden', value='1')
+
 mixin s-catalog()
 	// start s-catalog
 	+b.SECTION.s-catalog.section#s-catalog&attributes(attributes)
 		.container
 			block
+			.new_items 
+				+prod-item()
+				+prod-item('content/proc/sml_img49973054449.jpg')
+				+prod-item('content/proc/sml_img18955398392.jpg')
+				+prod-item('content/proc/sml_img38569715535.jpg')
 	// end s-catalog

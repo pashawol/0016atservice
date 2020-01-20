@@ -1,0 +1,30 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-main-filter/_s-main-filter.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-news/_s-news.pug
+include ../blocks/basket/_basket.pug
+include ../blocks/regform/_regform.pug
+
+block variables
+	- let  mainPage= 'inner-page'
+block title
+	- let  title= 'Регистрация'
+	title= title
+block pagecontent 
+	//- +mob-mnu()
+	+header()
+		+top-line()
+		+top-nav()
+	//- +header-block()
+
+	.container
+		+breadcrumb("Главная", title) 
+		+title(title)
+	.m_textblock
+		+regform
+	
+	+footer()

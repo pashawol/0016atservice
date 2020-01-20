@@ -1,0 +1,136 @@
+mixin regform()
+	.regform
+		form#rf_(action='admin/ddx.php?act=register', target='procframe', method='post', enctype='multipart/form-data')
+			br
+			br
+			div.reg-form(style='width: 485px; float: left;')
+				.capt
+					span Данные входа в систему
+				table.formblock(cellpadding='0', cellspacing='0', border='0')
+					tbody
+						tr
+							td
+								| E-mail 
+								small (используется для входа)
+								b *
+							td
+								input#email(type='text', name='email')
+								#emailwarn1.warn Введенный адрес email некорректен!
+						tr
+							td
+								| Повтор E-mail 
+								b *
+							td
+								input#confirmemail(type='text', name='confirmemail')
+								#emailwarn2.warn Введенные email адреса не совпадают!
+						tr
+							td
+								| Пароль 
+								b *
+							td
+								input#pass(type='password', name='pass')
+								#passwarn1.warn
+									| Введенный пароль слишком короткий!
+									br
+									|  (длинна пароля должна соствалять
+									br
+									| не менее 4х символов)
+						tr
+							td
+								| Повтор пароля 
+								b *
+							td
+								input#confirmpass(type='password', name='confirmpass')
+								#passwarn2.warn Введенные пароли не совпадают!
+				br
+				br
+				.capt
+					span Персональные данные
+				br
+				table.formblock(cellpadding='0', cellspacing='0', border='0')
+					tbody
+						tr
+							td
+								| Фамилия 
+								b *
+							td
+								input#secondname.req_(type='text', name='secondname')
+						tr
+							td
+								| Имя 
+								b *
+							td
+								input#firstname.req_(type='text', name='firstname')
+						tr
+							td Отчество
+							td
+								input#lastname(type='text', name='lastname')
+						tr
+							td Дата рождения (ДД.ММ.ГГГГ)
+							td
+								input#birthday(type='text', name='birthday')
+						tr
+							td
+								| Телефон 
+								b *
+							td
+								input#phone.req_(type='text', name='phone')
+						//
+							<tr>
+							<td>Факс</td><td><input type="text" id="fax" name="fax"></td>
+							</tr>
+						tr
+							td
+								| Город 
+								b *
+							td
+								input#city.req_(type='text', name='city')
+						tr
+							td
+								| Улица, номер дома, офис 
+								b *
+							td
+								input#addr.req_(type='text', name='addr')
+						tr
+							td Штрих-код дисконтной карты
+							td
+								input#orgname(type='text', name='orgname')
+			div.reg-text(style='float: left; margin-left: 30px; width: 450px;')
+				.capt
+					span Правила пользования
+				.rules_scr
+					p
+						span(style='font-size: medium;') Мы гарантируем безопасность Ваших персональных данных.
+					p
+						span(style='font-size: medium;')
+							| Клиент соглашается, что Продавец имеет право обрабатывать персональные данные Клиента для следующих целей:
+					p
+						span(style='font-size: medium;')
+							strong -
+							|  сообщение Клиенту об услугах, новостях и рекламных предложениях Продавца путем отправки SMS, электронных сообщений, MMS, по почте, и т.д.
+					p
+						span(style='font-size: medium;')
+							strong -
+							|  предоставление услуг и клиентской поддержки на запрос Клиента;
+					p
+						span(style='font-size: medium;')
+							strong -
+							|  обработка Заказа, сделанного Клиентом на Сайте, и передача данных соответствующим предприятиям и службам, осуществляющим 
+							strong доставку
+							| , для надлежащего выполнения Заказа;
+					p
+						span(style='font-size: medium;')
+							strong -
+							|  обеспечение реализации хозяйственных, гражданско-правовых, налоговых отношений и отношений в сфере, предусмотренной уставными документами Продавца, ведения бухгалтерского учета и осуществления операционной деятельности, необходимых для выполнения обязательств по данному Договору;
+					p
+						span(style='font-size: medium;')
+							strong -
+							|  передача персональных данных третьим лицам (в том числе контрагентам Продавца) и обработки их такими третьими лицами во всех случаях, когда это необходимо для выполнения данного Договора и/или сделанного Клиентом Заказа.
+				br
+				.i_agree
+					input#agree(type='checkbox', checked='checked')
+					label(for='agree') Я прочитал(а) и обязуюсь соблюдать правила
+					#agreewarn.warn(style='padding-left: 10px;') Необходимо принять правила пользования!
+			div(style='clear: both; padding-top: 20px;')
+				center
+					input.reg_sbm(type='submit', value='Регистрация')

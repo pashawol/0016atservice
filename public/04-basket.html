@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Корзина</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
+		<link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png"><meta name="format-detection" content="telephone=no">
+		<link rel="image_src" href="http://genrif.ru/assets/i/soc-logo.png">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="content">
+		<meta property="og:title" content="content">
+		<meta property="og:description" content="content">
+		<meta property="og:url" content="content">
+		<meta property="og:locale" content="ru_RU">
+		<meta property="og:image" content="path/to/image.jpg">
+		<meta property="og:image:width" content="968">
+		<meta property="og:image:height" content="504">
+		<!-- Custom Browsers Color-->
+		<meta name="theme-color" content="#3361d8">
+		<link rel="stylesheet" href="libs/slick-carousel/slick/slick.css"/>
+		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" href="css/main.min.css"/>
+	</head>
+	<body class="inner-page"><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]--><div class="ofs" style="position: fixed; left: 0px; top: 0px; width: 1px; height: 1px;"></div>
+		<div class="main-wrapper">
+			<!-- start HEADER.header-->
+			<header class="header block-with-lazy">
+				<!-- start .top-line-->
+				<div class="top-line block-with-lazy">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-3 text-xl-left text-center"><a class="top-line__logo" href="#"><img src="img/@2x/logo.png"/></a>
+							</div>
+							<div class="col d-none d-xl-block">
+								<div class="s_section">
+									<div class="lang_sw"><a href="#">Укр</a> | <a class="act" href="#">Рус</a></div>
+									<form action="/search" method="post">
+										<input type="text" name="searchstring" placeholder="Поиск"/>
+										<button type="button">
+											<svg class="icon icon-search ">
+												<use xlink:href="img/svg/sprite.svg#search"></use>
+											</svg>
+										</button>
+										<input type="submit" style="display: none;"/>
+									</form>
+								</div>
+							</div>
+							<div class="col-auto d-none d-xl-block">
+								<div class="c_section">
+									<div class="bigphone">
+										<noindex><a rel="nofollow" href="tel:+380800401001">0 800 401 001</a></noindex><small>Бесплатно по Украине</small>
+									</div>
+									<div class="cabblock"><a class="_cbin" id="cab" href="#">Вход</a><br/><a id="reg" href="/registration">Регистрация</a></div>
+								</div>
+							</div>
+							<div class="col-auto d-none d-xl-block text-center">
+								<div class="b_section">
+									<div class="phoneblock">
+										<noindex><a rel="nofollow" href="tel:+380508000001">050 800 00 01</a><br/><a rel="nofollow" href="tel:+380678000001">067 800 00 01</a><br/></noindex><a id="tocall" href="#">Заказать звонок</a>
+									</div>
+									<div class="basket" id="basket"><a href="#"><b>Корзина</b>Ваша корзина<br/>пуста</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end .top-line-->
+				<div class="menu_holder">
+					<div class="mainmenu"><a href="#">Каталог</a><a href="#">Главная</a><a href="/o_magazine">О магазине</a><a href="/dostavka_mn">Доставка</a><a href="/novosti">Новости</a><a href="/garantii">Гарантии</a><a href="/shinniy_servis">Шинный сервис</a></div>
+					<div class="mob_menu" style="display: none;"><a class="swbtn" href="#"></a><a class="bsbtn" href="/cart"></a></div>
+					<div class="ddn_menu mddn">
+						<ul id="menu">
+							<li>
+								<div>Шины</div>
+								<ul>
+									<li>
+										<div id="gruzovie_shini">Грузовые шины</div>
+									</li>
+									<li>
+										<div id="legkovie_shini">Легковые шины</div>
+									</li>
+									<li>
+										<div id="specshini">Спецшины</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div id="diski">Диски</div>
+							</li>
+							<li>
+								<div id="kameri">Камеры</div>
+							</li>
+							<li>
+								<div id="akkumulyatori">Аккумуляторы</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</header>
+			<!-- end HEADER.header-->
+			<div class="container">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+						<li class="breadcrumb-item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span>
+								<meta itemprop="position" content="1"/></a></li>
+						<li class="breadcrumb-item active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Корзина</span>
+								<meta itemprop="position" content="2"/></a></li>
+					</ol>
+				</nav>
+				<div class="section-title">
+					<h2>Корзина</h2>
+				</div>
+			</div>
+			<div class="m_textblock">
+				<script>var crti=[];</script>
+				<div class="basket_data">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						<tbody>
+							<tr class="bs_ln" id="bsi6944" valign="top">
+								<td style="padding-bottom: 4px;">
+									<div class="cat_list_avatar" style="width: 100px; height: 100px;"><img src="content/avatars/img97590123503.jpg" height="100"/></div>
+									<input id="__price" type="hidden" value="5177"/>
+									<input id="__quant" type="hidden" value="100"/>
+									<input id="__ids" type="hidden" value="6944"/>
+								</td>
+								<td style="padding-left: 10px; padding-bottom: 4px;" width="100%">
+									<div class="h1">Hankook AH35  215/75R17,5<a style="margin-left: 10px;" href="javascript:delBSitem(6944)"><img src="images/cross.png"/></a></div>
+								</td>
+								<td style="padding-left: 20px; padding-right: 20px;">
+									<center><b>Цена</b></center>
+									<h1 style="white-space: nowrap;">5177 <small>грн.</small></h1>
+								</td>
+								<td>
+									<center><b>Количество</b><br/><a class="bsi_minus" href="#">-</a>
+										<input class="bsi_quant" type="text" value="1"/><a class="bsi_plus" href="#">+</a>
+									</center>
+								</td>
+								<td style="padding-left: 20px; padding-right: 20px;">
+									<center><b>Сумма</b></center>
+									<h1 style="white-space: nowrap;"><span id="__sum">5177</span><small>грн.</small></h1>
+								</td>
+							</tr>
+							<script>
+								crt ={
+								'name': 'Hankook AH35  215/75R17,5',
+								'id': '6944',
+								'price': '5177',
+								'brand': 'Hankook',
+								'category': '856',
+								'quantity': 1
+								};
+								crti.push(crt);
+							</script>
+						</tbody>
+					</table>
+				</div>
+				<script>
+					window.dataLayer = window.dataLayer || [];
+					dataLayer.push({
+					'ecommerce': {
+					'currencyCode': 'UAH',
+					'checkout': {
+					'actionField': {'step': 1},
+					'products': crti
+					}
+					},
+					'event': 'gtm-ee-event',
+					'gtm-ee-event-category': 'Enhanced Ecommerce',
+					'gtm-ee-event-action': 'Checkout Step 1',
+					'gtm-ee-event-non-interaction': 'False',
+					});
+					function PushST(st)
+					{
+					window.dataLayer = window.dataLayer || [];
+					dataLayer.push({
+					'ecommerce': {
+					'currencyCode': 'UAH',
+					'checkout': {
+					'actionField': {'step': 1},
+					'products': crti
+					}
+					},
+					'event': 'gtm-ee-event',
+					'gtm-ee-event-category': 'Enhanced Ecommerce',
+					'gtm-ee-event-action': 'Checkout Step '+st,
+					'gtm-ee-event-non-interaction': 'False',
+					});
+					}
+				</script>
+				<div class="basket_sent">
+					<center>
+						<h1 style="margin-top: 115px; margin-bottom: 30px; color: gray; font-size: 26px;">Спасибо! Ваш заказ отправлен<br/>И будет обработан в ближайшее время!</h1><a href="/">Продолжить покупки</a>
+					</center>
+				</div>
+				<div class="basket_form">
+					<div class="bsf_capt">Персональные данные</div>
+					<div class="bsf_set">
+						<div class="bsf_entry _33">Фамилия <span style="font-size: 11px;"></span><br/>
+							<input id="secondname" type="text" name="secondname" value=""/>
+						</div>
+						<div class="bsf_entry _33">Имя <span style="font-size: 11px;"></span><br/>
+							<input id="firstname" type="text" name="firstname" value=""/>
+						</div>
+						<div class="bsf_entry _33">Отчество<br/>
+							<input id="lastname" type="text" name="lastname" value=""/>
+						</div>
+					</div>
+					<div class="bsf_set">
+						<div class="bsf_entry _33">Регион <span style="font-size: 11px;"></span><br/>
+							<select id="form_region">
+								<option value="null">-----------------</option>
+								<option value="Винницкая обл.">Винницкая обл.</option>
+								<option value="Волынская обл.">Волынская обл.</option>
+								<option value="Днепропетровская обл.">Днепропетровская обл.</option>
+								<option value="Донецкая обл.">Донецкая обл.</option>
+								<option value="Житомирская обл.">Житомирская обл.</option>
+								<option value="Закарпатская обл.">Закарпатская обл.</option>
+								<option value="Запорожская обл.">Запорожская обл.</option>
+								<option value="Ивано-Франковская обл.">Ивано-Франковская обл.</option>
+								<option value="Киевская обл.">Киевская обл.</option>
+								<option value="Кировоградская обл.">Кировоградская обл.</option>
+								<option value="Крымская обл.">Крымская обл.</option>
+								<option value="Луганская обл.">Луганская обл.</option>
+								<option value="Львовская обл.">Львовская обл.</option>
+								<option value="Николаевская обл.">Николаевская обл.</option>
+								<option value="Одесская обл.">Одесская обл.</option>
+								<option value="Полтавская обл.">Полтавская обл.</option>
+								<option value="Ровенская обл.">Ровенская обл.</option>
+								<option value="Сумская обл.">Сумская обл.</option>
+								<option value="Тернопольская обл.">Тернопольская обл.</option>
+								<option value="Украина">Украина</option>
+								<option value="Харьковская обл.">Харьковская обл.</option>
+								<option value="Херсонская обл.">Херсонская обл.</option>
+								<option value="Хмельницкая обл.">Хмельницкая обл.</option>
+								<option value="Черкасская обл.">Черкасская обл.</option>
+								<option value="Черниговская обл.">Черниговская обл.</option>
+								<option value="Черновицкая обл.">Черновицкая обл.</option>
+							</select>
+						</div>
+						<div class="bsf_entry _33">Город <span style="font-size: 11px;"></span><br/>
+							<select id="form_city" disabled="disabled">
+								<option value="null">-----------------</option>
+							</select>
+						</div>
+						<div class="bsf_entry _33">Адрес <span style="font-size: 11px;"></span><br/>
+							<input id="addr" type="text" name="addr"/>
+						</div>
+					</div>
+					<div class="bsf_set">
+						<div class="bsf_entry _50">Телефон <span style="font-size: 11px;">(обязательно)</span><br/>
+							<input id="phone" type="text" name="phone" value=""/>
+						</div>
+						<div class="bsf_entry _50">e-mail <span style="font-size: 11px;">(обязательно)</span><br/>
+							<input id="email" type="text" name="email" value=""/>
+						</div>
+					</div>
+					<div class="bsf_capt">Оплата и доставка</div>
+					<div class="bsf_set">
+						<div class="bsf_entry _33">Служба доставки <span style="font-size: 11px;"></span><br/>
+							<select id="form_deliverysvc">
+								<option value="Новая почта">Новая почта</option>
+								<option value="УкрПочта">УкрПочта</option>
+								<option value="Автолюкс">Автолюкс</option>
+								<option value="Самовывоз (г. Мариуполь)">Самовывоз (г. Мариуполь)</option>
+							</select>
+						</div>
+						<div class="bsf_entry _33">Отделение или адрес <span style="font-size: 11px;"></span><br/>
+							<input id="form_deliveryaddr" type="text" name="name"/>
+						</div>
+						<div class="bsf_entry _33">Форма оплаты <span style="font-size: 11px;"></span><br/>
+							<select id="form_paymethod">
+								<option value="Банковская карта">Банковская карта</option>
+								<option value="Наличными курьеру">Наличными курьеру</option>
+								<option value="Наложенный платеж">Наложенный платеж</option>
+								<option value="Оплата в магазине (г. Мариуполь)">Оплата в магазине (г. Мариуполь)</option>
+							</select>
+						</div>
+					</div>
+					<div class="bsf_set">
+						<div class="bsf_entry _100">Примечания к заказу <small>(если есть дисконтная карта введите ее штрих-код, наши менеджеры пересчитают стоимость заказа)</small><br/>
+							<textarea id="form_data"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="_summary">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						<tbody>
+							<tr>
+								<td width="100%">В вашей корзине <b>1</b> товар на сумму <b>5177 грн. </b> (-%) Итого: 
+									<h1 style="display: inline!important;">5177</h1> грн.
+								</td>
+								<td>
+									<div id="fm">
+										<input type="button" onclick="javascript:ShowBSForm()" value="Оформить заказ"/>
+									</div>
+									<div id="dv" style="display: none; white-space: nowrap;">
+										<input type="button" onclick="javascript:CancelDelivery()" value="Отмена"/>
+										<input type="button" onclick="javascript:DeliveryOrder()" value="Отправить"/>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<footer class="footer block-with-lazy">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col d-non">
+							<div class="row">
+								<div class="col-3 sm-block">
+									<ul>
+										<li>О магазине</li>
+										<li><a href="#">Главная</a></li>
+										<li><a href="#">О магазине</a></li>
+										<li><a href="#">Доставка</a></li>
+										<li><a href="#">Новости</a></li>
+										<li><a href="#">Гарантии</a></li>
+										<li><a href="#">Шинный сервис</a></li>
+									</ul>
+								</div>
+								<div class="col-3 sm-block">
+									<ul>
+										<li>Категории</li>
+										<li><a href="#">Грузовые шины</a></li>
+										<li><a href="#">Легковые шины</a></li>
+										<li><a href="#">Спецшины</a></li>
+										<li><a href="#">Камеры</a></li>
+										<li><a href="#">Диски</a></li>
+										<li><a href="#">Аккумуляторы</a></li>
+									</ul>
+								</div>
+								<div class="col-3 sm-block">
+									<ul>
+										<li>Контакты</li>
+										<li class="number"><a href="tel:0800401001">0800401001</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 text-right">
+							<p>Мы в соц. сетях</p>
+							<div class="footer__soc"><a href="#">
+									<svg class="icon icon-twitter ">
+										<use xlink:href="img/svg/sprite.svg#twitter"></use>
+									</svg></a><a href="#">
+									<svg class="icon icon-instagram ">
+										<use xlink:href="img/svg/sprite.svg#instagram"></use>
+									</svg></a><a href="#">
+									<svg class="icon icon-facebook ">
+										<use xlink:href="img/svg/sprite.svg#facebook"></use>
+									</svg></a>
+							</div>
+							<div class="footer__site-map" href="">Карта сайта
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="border-top">
+					<div class="container">
+						<div class="row dev">
+							<div class="col-6">Разработка сайта: <a href="#">Respect Design</a></div>
+							<div class="col-6 text-right">© AzovTrackService 2018</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<div class="ofs" style="position: fixed; left: 0px; top: 0px; width: 1px; height: 1px;"></div>
+		<div class="cbx" id="sent" style="display: none;">
+			<div class="c_box_container">
+				<div class="c_box">
+					<div class="_capt">Спасибо!</div>                    Ваше сообщение отправлено<br/>и будет обработано в ближайшее время.<br/><a class="_cb_btn _cb_close" href="#">Ok</a>
+				</div>
+			</div>
+		</div>
+		<div class="cbx" id="_order" style="display: none;">
+			<div class="c_box_container">
+				<div class="c_box">
+					<div class="_capt">Заказ обратного звонка</div>
+					<div class="ordering"></div>
+					<input class="mb_input" id="as_name" type="text" placeholder="ФИО"/><br/>
+					<input class="mb_input" id="as_name" type="text" placeholder="Телефон"/><br/>
+					<input class="mb_input" id="as_name" type="text" placeholder="Email"/><br/><a class="_cb_btn _cb_send" href="#">Отправить</a><a class="_cb_btn _cb_close" href="#" style="opacity: 0.5;">Отмена</a>
+				</div>
+			</div>
+		</div>
+		<div class="cbx" id="_login" style="display:none;">
+			<div class="c_box_container">
+				<div class="c_box">
+					<div class="_capt">Вход в персональный кабинет</div>
+					<div id="wrong" style="color: red; padding-bottom: 20px; display: none;">Неверно введен логин или пароль!</div>
+					<input class="mb_input" id="as_login" type="text" placeholder="email"/><br/>
+					<input class="mb_input" id="as_pass" type="password" placeholder="пароль"/><br/>
+					<div>Нет учетной записи? <a href="/registration">Зарегистрируйтесь!</a></div><a class="_cb_btn" id="_lgn" href="#">Вход</a><a class="_cb_btn _cb_close" href="#" style="opacity: 0.5;">Отмена</a>
+				</div>
+			</div>
+		</div>
+		<script src="js/lazy.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script src="js/gui.js"></script>
+		<script src="js/std.js"></script>
+		<!-- полифил для picture-->
+		<script src="libs/picturefill/picturefill.min.js"></script>
+		<!-- полифил для object-fit-->
+		<script src="libs/object-fit-images/ofi.min.js"></script>
+		<!-- modal libs-->
+		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
+		<!-- modal libs-->
+		<!-- slider libs-->
+		<script src="libs/slick-carousel/slick/slick.min.js"></script>
+		<!-- /slider libs-->
+		<!-- for svg libs-->
+		<script src="libs/svg4everybody/svg4everybody.min.js"></script>
+		<!-- /for svg libs-->
+		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

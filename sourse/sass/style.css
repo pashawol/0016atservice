@@ -625,8 +625,8 @@ html {
 
 .item:hover {
     border-color: #3464CD;
-    border-width: 3px;
-    padding: 10px;
+    /* border-width: 3px; */
+    /* padding: 10px; */
 }
 
 .item .name_block {

@@ -1,0 +1,209 @@
+mixin basket()
+	.m_textblock
+		script.
+			var crti=[];
+		.basket_data
+			table(cellpadding='0', cellspacing='0', border='0', width='100%')
+				tbody
+					tr#bsi6944.bs_ln(valign='top')
+						td(style='padding-bottom: 4px;')
+							.cat_list_avatar(style='width: 100px; height: 100px;')
+								img(src='content/avatars/img97590123503.jpg', height='100')
+							input#__price(type='hidden', value='5177')
+							input#__quant(type='hidden', value='100')
+							input#__ids(type='hidden', value='6944')
+						td(style='padding-left: 10px; padding-bottom: 4px;', width='100%')
+							.h1
+								| Hankook AH35  215/75R17,5
+								a(style='margin-left: 10px;', href='javascript:delBSitem(6944)')
+									img(src='images/cross.png')
+						td(style='padding-left: 20px; padding-right: 20px;')
+							center
+								b Цена
+							h1(style='white-space: nowrap;')
+								| 5177 
+								small грн.
+						td
+							center
+								b Количество
+								br
+								a.bsi_minus(href='#') -
+								input.bsi_quant(type='text', value='1')
+								a.bsi_plus(href='#') +
+						td(style='padding-left: 20px; padding-right: 20px;')
+							center
+								b Сумма
+							h1(style='white-space: nowrap;')
+								span#__sum 5177
+								small грн.
+					script.
+						crt ={
+						'name': 'Hankook AH35  215/75R17,5',
+						'id': '6944',
+						'price': '5177',
+						'brand': 'Hankook',
+						'category': '856',
+						'quantity': 1
+						};
+						crti.push(crt);
+		script.
+			window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+			'ecommerce': {
+			'currencyCode': 'UAH',
+			'checkout': {
+			'actionField': {'step': 1},
+			'products': crti
+			}
+			},
+			'event': 'gtm-ee-event',
+			'gtm-ee-event-category': 'Enhanced Ecommerce',
+			'gtm-ee-event-action': 'Checkout Step 1',
+			'gtm-ee-event-non-interaction': 'False',
+			});
+			function PushST(st)
+			{
+			window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+			'ecommerce': {
+			'currencyCode': 'UAH',
+			'checkout': {
+			'actionField': {'step': 1},
+			'products': crti
+			}
+			},
+			'event': 'gtm-ee-event',
+			'gtm-ee-event-category': 'Enhanced Ecommerce',
+			'gtm-ee-event-action': 'Checkout Step '+st,
+			'gtm-ee-event-non-interaction': 'False',
+			});
+			}
+		.basket_sent
+			center
+				h1(style='margin-top: 115px; margin-bottom: 30px; color: gray; font-size: 26px;')
+					| Спасибо! Ваш заказ отправлен
+					br
+					| И будет обработан в ближайшее время!
+				a(href='/') Продолжить покупки
+		.basket_form
+			.bsf_capt Персональные данные
+			.bsf_set
+				.bsf_entry._33
+					| Фамилия 
+					span(style='font-size: 11px;')
+					br
+					input#secondname(type='text', name='secondname', value='')
+				.bsf_entry._33
+					| Имя 
+					span(style='font-size: 11px;')
+					br
+					input#firstname(type='text', name='firstname', value='')
+				.bsf_entry._33
+					| Отчество
+					br
+					input#lastname(type='text', name='lastname', value='')
+			.bsf_set
+				.bsf_entry._33
+					| Регион 
+					span(style='font-size: 11px;')
+					br
+					select#form_region
+						option(value='null') -----------------
+						option(value='Винницкая обл.') Винницкая обл.
+						option(value='Волынская обл.') Волынская обл.
+						option(value='Днепропетровская обл.') Днепропетровская обл.
+						option(value='Донецкая обл.') Донецкая обл.
+						option(value='Житомирская обл.') Житомирская обл.
+						option(value='Закарпатская обл.') Закарпатская обл.
+						option(value='Запорожская обл.') Запорожская обл.
+						option(value='Ивано-Франковская обл.') Ивано-Франковская обл.
+						option(value='Киевская обл.') Киевская обл.
+						option(value='Кировоградская обл.') Кировоградская обл.
+						option(value='Крымская обл.') Крымская обл.
+						option(value='Луганская обл.') Луганская обл.
+						option(value='Львовская обл.') Львовская обл.
+						option(value='Николаевская обл.') Николаевская обл.
+						option(value='Одесская обл.') Одесская обл.
+						option(value='Полтавская обл.') Полтавская обл.
+						option(value='Ровенская обл.') Ровенская обл.
+						option(value='Сумская обл.') Сумская обл.
+						option(value='Тернопольская обл.') Тернопольская обл.
+						option(value='Украина') Украина
+						option(value='Харьковская обл.') Харьковская обл.
+						option(value='Херсонская обл.') Херсонская обл.
+						option(value='Хмельницкая обл.') Хмельницкая обл.
+						option(value='Черкасская обл.') Черкасская обл.
+						option(value='Черниговская обл.') Черниговская обл.
+						option(value='Черновицкая обл.') Черновицкая обл.
+				.bsf_entry._33
+					| Город 
+					span(style='font-size: 11px;')
+					br
+					select#form_city(disabled='disabled')
+						option(value='null') -----------------
+				.bsf_entry._33
+					| Адрес 
+					span(style='font-size: 11px;')
+					br
+					input#addr(type='text', name='addr')
+			.bsf_set
+				.bsf_entry._50
+					| Телефон 
+					span(style='font-size: 11px;') (обязательно)
+					br
+					input#phone(type='text', name='phone', value='')
+				.bsf_entry._50
+					| e-mail 
+					span(style='font-size: 11px;') (обязательно)
+					br
+					input#email(type='text', name='email', value='')
+			.bsf_capt Оплата и доставка
+			.bsf_set
+				.bsf_entry._33
+					| Служба доставки 
+					span(style='font-size: 11px;')
+					br
+					select#form_deliverysvc
+						option(value='Новая почта') Новая почта
+						option(value='УкрПочта') УкрПочта
+						option(value='Автолюкс') Автолюкс
+						option(value='Самовывоз (г. Мариуполь)') Самовывоз (г. Мариуполь)
+				.bsf_entry._33
+					| Отделение или адрес 
+					span(style='font-size: 11px;')
+					br
+					input#form_deliveryaddr(type='text', name='name')
+				.bsf_entry._33
+					| Форма оплаты 
+					span(style='font-size: 11px;')
+					br
+					select#form_paymethod
+						option(value='Банковская карта') Банковская карта
+						option(value='Наличными курьеру') Наличными курьеру
+						option(value='Наложенный платеж') Наложенный платеж
+						option(value='Оплата в магазине (г. Мариуполь)') Оплата в магазине (г. Мариуполь)
+			.bsf_set
+				.bsf_entry._100
+					| Примечания к заказу 
+					small
+						| (если есть дисконтная карта введите ее штрих-код, наши менеджеры пересчитают стоимость заказа)
+					br
+					textarea#form_data
+		._summary
+			table(cellpadding='0', cellspacing='0', border='0', width='100%')
+				tbody
+					tr
+						td(width='100%')
+							| В вашей корзине 
+							b 1
+							|  товар на сумму 
+							b 5177 грн. 
+							|  (-%) Итого: 
+							h1(style='display: inline!important;') 5177
+							|  грн.
+						td
+							#fm
+								input(type='button', onclick='javascript:ShowBSForm()', value='Оформить заказ')
+							#dv(style='display: none; white-space: nowrap;')
+								input(type='button', onclick='javascript:CancelDelivery()', value='Отмена')
+								input(type='button', onclick='javascript:DeliveryOrder()', value='Отправить')

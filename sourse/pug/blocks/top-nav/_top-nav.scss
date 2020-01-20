@@ -38,7 +38,10 @@
 }
 
 
-.mainmenu a {}
+.mainmenu a {
+	color: #ffffff;
+	text-decoration: none !important;
+}
 
 .mainmenu a:first-child {
 	background-image: url(../img/@2x/sandwich.png);

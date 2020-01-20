@@ -1,46 +1,40 @@
 
 mixin modal() 
  
-	//- #modal-win.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modal-win', aria-hidden='true')
-		
-	//- 	div( class="   modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			+input("tel","Введите ваш телефон")(name="tel" required) 
-				
-	//- 			+e.BUTTON.btn.btn.btn-accent.btn-block Отправить
-	//- 			+b.wrap-polite
-	//- 				+b.custom-input.polite
-	//- 					+b.LABEL.custom-input.polite
-	//- 						+e.INPUT.input.__input-radio(type="checkbox" checked name="polite" required value="")
-	//- 						+e.SPAN.lab
-	//- 						| Даю 
-	//- 						| 
-	//- 						span.link( data-toggle='modal', data-target='#exampleModal2') согласие 
-
-	//- 						| на хранение и обработку   персональных данных
-	
- 
-
-	//- #thanks.modal.fade(tabindex='-1', role='dialog', aria-labelledby='thanks', aria-hidden='true')
-	//- 	div( class=" ttext-center  modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			br
-	//- 			.h2 Заявка принята
-	//- 			br
-	//- 			.h3 Скоро с Вами свяжутся
-	//- 			br 
-	.d-none
-		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
-			.text-center
-				+e.title.h3.ttu Обратный звонок
-				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя")(required) 
-			+input("Ваш телефон","tel")(required)
-			//- +input("email","Ваше email")(required)
-			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Рассчитать") 
-			+polite()
-		// #modal-call
-	// modal
+	.ofs(style='position: fixed; left: 0px; top: 0px; width: 1px; height: 1px;')
+	#sent.cbx(style='display: none;')
+		.c_box_container
+			.c_box
+				._capt Спасибо!
+				|                     Ваше сообщение отправлено
+				br
+				| и будет обработано в ближайшее время.
+				br
+				a._cb_btn._cb_close(href='#') Ok
+	#_order.cbx(style='display: none;')
+		.c_box_container
+			.c_box
+				._capt Заказ обратного звонка
+				.ordering
+				input#as_name.mb_input(type='text', placeholder='ФИО')
+				br
+				input#as_name.mb_input(type='text', placeholder='Телефон')
+				br
+				input#as_name.mb_input(type='text', placeholder='Email')
+				br
+				a._cb_btn._cb_send(href='#') Отправить
+				a._cb_btn._cb_close(href='#', style='opacity: 0.5;') Отмена
+	#_login.cbx(style='display:none;')
+		.c_box_container
+			.c_box
+				._capt Вход в персональный кабинет
+				#wrong(style='color: red; padding-bottom: 20px; display: none;') Неверно введен логин или пароль!
+				input#as_login.mb_input(type='text', placeholder='email')
+				br
+				input#as_pass.mb_input(type='password', placeholder='пароль')
+				br
+				div
+					| Нет учетной записи? 
+					a(href='/registration') Зарегистрируйтесь!
+				a#_lgn._cb_btn(href='#') Вход
+				a._cb_btn._cb_close(href='#', style='opacity: 0.5;') Отмена
