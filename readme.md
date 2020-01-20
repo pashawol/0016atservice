@@ -1,8 +1,8 @@
 <https://github.com/pashawol/0016atservice/settings>
 1. <https://pashawol.github.io/0016atservice/>
 1. <https://pashawol.github.io/0016atservice/public/index.html>
-1. <https://pashawol.github.io/0016atservice/02-catalog.html>
-1. <https://pashawol.github.io/0016atservice/04-basket.html> 
+1. <https://pashawol.github.io/0016atservice/public/02-catalog.html>
+1. <https://pashawol.github.io/0016atservice/public/04-basket.html> 
 1. <https://pashawol.github.io/0016atservice/public/01-o_magazine.html>
 1. <https://pashawol.github.io/0016atservice/public/02-dostavka_mn.html>
 1. <https://pashawol.github.io/0016atservice/public/03-novosti.html>
