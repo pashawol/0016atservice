@@ -1,7 +1,80 @@
 .footer {
-		
+	background-color: #E9E8E8;
+	padding-top: rem(30);
+	padding-bottom: rem(30);
+	font-size: rem(18);
 
+	&__soc {
+		display: flex;
+		justify-content: flex-end;
+		a{
+			position: relative;
+			color: $body-color;
+			width: rem(25);
+			height: rem(25);
+			border: 1px solid $body-color;
+			border-radius: 50%;
+			opacity: .7;
+			margin-left: rem(5);
+			padding: rem(4);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		.icon {
 
+			font-size: rem(15);
+		}
+		margin-bottom: rem(20);
+	}
+	&__site-map {
+		font-size: rem(15);
+		color: #949393;
+	}
+	.d-non {
+		display: none;
+		@include media-breakpoint-up(md) {
+			display: block;
+		}
+	}
+	.sm-block {
+		ul {
+			li {
+				list-style: none;
+				margin-bottom: rem(20);
+				&:nth-child(n+2) {
+					margin-bottom: rem(10);
+					font-size: 1rem;
+				}
+			}
+			.number {
+				a{
+					color: $body-color;
+				}
+			}
+		}
+		a {
+			color: #949393;
+			text-decoration: none;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	.border-top{
+		margin-top: rem(20);
+		border-top: 1px #B7B7B7 solid;
+	}
+	.dev {
+		padding-top: rem(20);
+		font-size: rem(15);
+		a{
+			text-decoration: underline;
+		}
+	}
 // 
 @include media-breakpoint-up(xl) {}
 
@@ -35,7 +108,11 @@
 
 @include media-breakpoint-down(lg) {}
 
-@include media-breakpoint-down(md) {}
+@include media-breakpoint-down(md) {
+	.d-non {
+		display: none;
+	}
+}
 
 @include media-breakpoint-down(sm) {}
 

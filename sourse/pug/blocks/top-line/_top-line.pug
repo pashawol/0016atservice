@@ -2,5 +2,45 @@ mixin top-line()
 	// start .top-line
 	+b.top-line.block-with-lazy
 		.container
-			.row top-line
+			.row
+				.col-xl-3.text-xl-left.text-center
+					+e.logo(href="#")
+						img(src='img/@2x/logo.png')
+				.col.d-none.d-xl-block
+					.s_section
+						.lang_sw
+							a(href='#') Укр
+							|  | 
+							a.act(href='#') Рус
+						form(action='/search', method='post')
+							input(type='text', name='searchstring', placeholder='Поиск')
+							button(type="button")
+								+icon("search")
+							input(type='submit', style='display: none;')
+				.col-auto.d-none.d-xl-block
+					.c_section
+						.bigphone
+							noindex
+								a(rel='nofollow', href='tel:+380800401001') 0 800 401 001
+							small Бесплатно по Украине
+						.cabblock
+							a#cab._cbin(href='#') Вход
+							br
+							a#reg(href='/registration') Регистрация
+				.col-auto.d-none.d-xl-block.text-center
+					.b_section
+						.phoneblock
+							noindex
+								a(rel='nofollow', href='tel:+380508000001') 050 800 00 01
+								br
+								a(rel='nofollow', href='tel:+380678000001') 067 800 00 01
+								br
+							a#tocall(href='#') Заказать звонок
+						#basket.basket
+							a(href='#')
+								b Корзина
+								| Ваша корзина
+								br
+								| пуста
+
 	// end .top-line

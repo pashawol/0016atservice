@@ -1,11 +1,11 @@
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
-	btnToggleMenuMobile : [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
-	menuMobile : document.querySelector(".menu-mobile--js"),
-	menuMobileLink : [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
-	body : document.querySelector("body"),
+	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
+	menuMobile: document.querySelector(".menu-mobile--js"),
+	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
+	body: document.querySelector("body"),
 
-	modalCall() { 
+	modalCall() {
 		$(".link-modal").fancybox({
 			arrows: false,
 			infobar: false,
@@ -26,61 +26,12 @@ const JSCCommon = {
 				},
 			},
 		});
-		$(".modal-close-js").click(function() {
+		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		})
 	},
 	// /magnificPopupCall
-	toggleMenu() {
-		let  _this = this;
-		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.addEventListener('click', function() {
 
-				_this.btnToggleMenuMobile.forEach(function (element) {
-					element.classList.toggle("on");
-				});
-				_this.menuMobile.classList.toggle("active");
-				_this.body.classList.toggle("fixed");
-				
-				return false;
-			});
-		});
-	},
-
-	closeMenu() {
-		let  _this = this;
-		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.classList.remove("on");
-			
-		});
-		_this.menuMobile.classList.remove("active");
-		_this.body.classList.remove("fixed");
-		
-	},
-
-	mobileMenu() {
-		// закрыть/открыть мобильное меню
-		let  _this = this;
-
-		_this.toggleMenu();
-		_this.menuMobileLink.forEach(function (element)  {
-			element.addEventListener('click',  function (e) {
-				console.log(element);
-				_this.closeMenu(); 
-				
-			});
-		})
-		document.addEventListener('mouseup', function (event)   {
-			let container = event.target.closest(".menu-mobile--js.active"); // (1)
-			if (!container) {
-				_this.closeMenu(); 
-				
-			}
-		});
-	},
-	// /mobileMenu
-
-	// табы  . 
 	tabscostume(tab) {
 		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
 			$(this)
@@ -111,13 +62,12 @@ function eventHandler() {
 
 	JSCCommon.tabscostume('tabs');
 
-	JSCCommon.mobileMenu();
 
 	JSCCommon.inputMask();
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -150,7 +100,7 @@ function eventHandler() {
 
 		const topH = $("header ").innerHeight();
 
-		$(window).scroll(function() {
+		$(window).scroll(function () {
 			if ($(window).scrollTop() > topH) {
 				$('.top-nav  ').addClass('fixed');
 			} else {
@@ -158,12 +108,10 @@ function eventHandler() {
 			}
 		});
 		// конец добавил
-		if (window.matchMedia("(min-width: 992px)").matches) {
-			JSCCommon.closeMenu();
-		}
+
 	}
 
-	$(window).resize(function() {
+	$(window).resize(function () {
 		heightses();
 
 	});
@@ -171,7 +119,7 @@ function eventHandler() {
 	heightses();
 
 	// листалка по стр
-	$(" .top-nav li a, .scroll-link").click(function() {
+	$(" .top-nav li a, .scroll-link").click(function () {
 		const elementClick = $(this).attr("href");
 		const destination = $(elementClick).offset().top;
 
@@ -251,52 +199,133 @@ function eventHandler() {
 	// });
 	// modal window
 
- 
+
 	//    const wow = new WOW({ mobile: false });
 	//         wow.init();
- 
 
-	var gets = (function() {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
-		}
-		return b;
-	})();
-	// form
-	$("form").submit(function(e) {
-		e.preventDefault();
-		const th = $(this);
-		var data = th.serialize();
-		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-		$.ajax({
-			url: 'action.php',
-			type: 'POST',
-			data: data,
-		}).done(function(data)  {
+	$(function () {
+		$("#menu").menu();
+	});
 
-			$.fancybox.close();
-			$.fancybox.open({
-				src: '#modal-thanks',
-				type: 'inline'
-			});
-			// window.location.replace("/thanks.html");
-			setTimeout(function() {
-				// Done Functions
-				th.trigger("reset");
-				// $.magnificPopup.close();
-				// ym(53383120, 'reachGoal', 'zakaz');
-				// yaCounter55828534.reachGoal('zakaz');
-			}, 4000);
-		}).fail(function() { });
+	$(".forms select").selectmenu();
 
+	$('.ddn_menu li').click(function () {
+		var link = $(this).find('div').attr('id');
+		if (link)
+			window.document.location = "/" + link;
+		return false;
+	});
+
+	$('.mainmenu a:first-child').click(function () {
+		menutouch = true;
+		$('.ddn_menu').toggle();
+		return false;
+	});
+
+	var impressions = [];
+	$('.ga_item').each(function () {
+		//var imp=[];
+		//impa.name='name';
+		imp = {
+			'name': $(this).find('.ga_name').val(),
+			'id': $(this).find('.ga_id').val(),
+			'price': $(this).find('.ga_price').val(),
+			'brand': $(this).find('.ga_brand').val(),
+			'category': $(this).find('.ga_category').val(),
+			'position': $(this).find('.ga_position').val()
+		};
+
+    /*imp['name']=$(this).find('.ga_name').val()+'NNN';
+    imp['id']=$(this).find('.ga_id').val();
+    imp['price']=$(this).find('.ga_price').val();
+    imp['brand']=$(this).find('.ga_brand').val();
+    imp['category']=$(this).find('.ga_category').val();
+    imp['position']=$(this).find('.ga_position').val();*/
+
+		impressions.push(imp);
+	});
+
+	if ($('.ga_item').length) {
+
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'ecommerce': {
+				'currencyCode': 'UAH',
+				'impressions': impressions
+			},
+			'event': 'gtm-ee-event',
+			'gtm-ee-event-category': 'Enhanced Ecommerce',
+			'gtm-ee-event-action': 'Product Impressions',
+			'gtm-ee-event-non-interaction': 'True',
+		});
+	}
+
+
+	$('.ga_st2').click(function () {
+
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'ecommerce': {
+				'currencyCode': 'UAH',
+				'click': {
+					'products': [{
+						'name': $(this).parent().find('.ga_name').val(),
+						'id': $(this).parent().find('.ga_id').val(),
+						'price': $(this).parent().find('.ga_price').val(),
+						'brand': $(this).parent().find('.ga_brand').val(),
+						'category': $(this).parent().find('.ga_category').val(),
+						'position': $(this).parent().find('.ga_position').val()
+					}]
+				}
+			},
+			'event': 'gtm-ee-event',
+			'gtm-ee-event-category': 'Enhanced Ecommerce',
+			'gtm-ee-event-action': 'Product Clicks',
+			'gtm-ee-event-non-interaction': 'False',
+		});
+		//return false;    
+	});
+
+
+	if ($('.ga_item').length) {
+
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'ecommerce': {
+				'currencyCode': 'UAH',
+				'impressions': impressions
+			},
+			'event': 'gtm-ee-event',
+			'gtm-ee-event-category': 'Enhanced Ecommerce',
+			'gtm-ee-event-action': 'Product Impressions',
+			'gtm-ee-event-non-interaction': 'True',
+		});
+	}
+
+
+	$('.ga_st2').click(function () {
+
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'ecommerce': {
+				'currencyCode': 'UAH',
+				'click': {
+					'products': [{
+						'name': $(this).parent().find('.ga_name').val(),
+						'id': $(this).parent().find('.ga_id').val(),
+						'price': $(this).parent().find('.ga_price').val(),
+						'brand': $(this).parent().find('.ga_brand').val(),
+						'category': $(this).parent().find('.ga_category').val(),
+						'position': $(this).parent().find('.ga_position').val()
+					}]
+				}
+			},
+			'event': 'gtm-ee-event',
+			'gtm-ee-event-category': 'Enhanced Ecommerce',
+			'gtm-ee-event-action': 'Product Clicks',
+			'gtm-ee-event-non-interaction': 'False',
+		});
+		//return false;    
 	});
 
 };

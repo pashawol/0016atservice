@@ -1,4 +1,56 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
 		.container
-			h2 footer
+			.row.justify-content-between
+				.col.d-non
+					.row
+						.col-3.sm-block
+							ul
+								li О магазине
+								li
+									a(href="#") Главная
+								li
+									a(href="#") О магазине
+								li
+									a(href="#") Доставка
+								li
+									a(href="#") Новости
+								li
+									a(href="#") Гарантии
+								li
+									a(href="#") Шинный сервис
+						.col-3.sm-block
+							ul
+								li Категории
+								li
+									a(href="#") Грузовые шины
+								li
+									a(href="#") Легковые шины
+								li
+									a(href="#") Спецшины
+								li
+									a(href="#") Камеры
+								li
+									a(href="#") Диски
+								li
+									a(href="#") Аккумуляторы
+						.col-3.sm-block
+							ul
+								li Контакты
+								li.number
+									a(href="tel:0800401001") 0800401001
+				.col-lg-3.text-right
+					p Мы в соц. сетях
+					+e.soc
+						a(href="#")
+							+icon('twitter')
+						a(href="#")
+							+icon('instagram')
+						a(href="#")
+							+icon('facebook')
+					+e.site-map(href="") Карта сайта
+		.border-top
+			.container
+				.row.dev
+					.col-6 Разработка сайта: <a href="#">Respect Design</a>
+					.col-6.text-right © AzovTrackService 2018

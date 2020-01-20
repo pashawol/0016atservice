@@ -1,7 +1,45 @@
 
 	// start .s-news
 	.s-news {
-		 
+
+		.news-item{
+			margin-bottom: rem(50);
+			@include media-breakpoint-up(md){
+				margin-left: rem(30);
+			}
+			&:hover {
+				background-color: #deefff;
+				text-decoration: none;
+			}
+			@include roww(0);
+
+		
+			&__img-wrap {
+				// max-width: rem(190);
+			}
+			&__description {
+				vertical-align: top;
+				padding: rem(10);
+				padding-top: 0;
+				@include media-breakpoint-up (md){
+					padding: rem(20);
+					padding-left: rem(40);
+				}
+			}
+			&__headline {
+				@extend h2;
+				color: $body-color;
+				border-bottom: 1px #C2C2C2 solid;
+				width: 100%;
+				padding-bottom: rem(10);
+				margin-bottom: rem(10);
+				font-weight: bold;
+			}
+			&__date {
+				color: #A8A8A8;
+				font-size: rem(14);
+			}
+		}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
