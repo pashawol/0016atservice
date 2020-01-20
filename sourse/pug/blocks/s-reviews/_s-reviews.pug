@@ -1,0 +1,26 @@
+mixin s-reviews()
+	// start s-reviews
+	+b.SECTION.s-reviews.section#s-reviews&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Отзывы
+			.text-center
+				h3 У данного товара еще нет отзывов, ваш будет первым!
+				p Оцените товар:
+				+e.rating
+					+e.strar(href="#" rel="1")
+						+icon('star')
+					+e.strar(href="#" rel="2")
+						+icon('star')
+					+e.strar(href="#" rel="3")
+						+icon('star')
+					+e.strar(href="#" rel="4")
+						+icon('star')
+					+e.strar(href="#" rel="5")
+						+icon('star')
+				+b.form-wrap
+					+input('Ваше имя','text')
+					+input('Город','text')
+					+input('Ваш комментарий','textarea')
+					+e.INPUT.btn(type="submit" value="Добавить отзыв")
+	// end s-reviews
